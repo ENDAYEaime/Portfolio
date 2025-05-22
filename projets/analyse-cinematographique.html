@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyse de Données Cinématographiques – ENDAYE Aimé</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/projet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Menu principal">
+      <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+      <ul class="nav-links">
+        <li><a href="../index.html#projets">Projets</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main" class="project-page">
+    <article class="project-content">
+      <h1>Analyse de Données Cinématographiques</h1>
+
+      <section class="project-details">
+        <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+        <p>Projet réalisé dans le cadre du Module 3 : Challenge 2. L'objectif était d'explorer, nettoyer et analyser une base de données cinématographique (type Sakila) à l'aide de Python, SQL et Jupyter Notebook. Le projet comprend :</p>
+        <ul>
+          <li><strong>Chargement et structuration des données </strong>: import de fichiers CSV dans une base SQLite, création des tables et jointures</li>
+          <li><strong>Nettoyage des données </strong>: gestion des valeurs manquantes, suppression des doublons, vérification des types</li>
+          <li><strong>Analyse exploratoire </strong>: requêtes SQL avancées pour extraire des statistiques sur les films, clients, locations, revenus, etc.</li>
+          <li><strong>Visualisation </strong>: utilisation de pandas et matplotlib/seaborn pour représenter les résultats</li>
+        </ul>
+        <div class="tech-stack">
+          <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+          <ul>
+            <li><strong>Python</strong> : manipulation et analyse de données</li>
+            <li><strong>Pandas</strong> : traitement des DataFrames</li>
+            <li><strong>SQLAlchemy</strong> : gestion de la base SQLite</li>
+            <li><strong>Jupyter Notebook</strong> : environnement interactif</li>
+            <li><strong>SQL</strong> : requêtes analytiques</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="code-section-wrapper">
+        <section class="project-code">
+          <h2><i class="fas fa-code"></i> Extrait du code</h2>
+          <pre><code class="language-python">
+# Chargement des CSV dans SQLite
+import pandas as pd
+from sqlalchemy import create_engine
+
+engine = create_engine('sqlite:///data/database.db')
+csv_files = {
+    'actor.csv': 'actor',
+    'film.csv': 'film',
+    # ... autres fichiers ...
+}
+for csv_file, table_name in csv_files.items():
+    df = pd.read_csv(f'data/{csv_file}')
+    df.to_sql(table_name, con=engine, if_exists='replace', index=False)
+
+# Exemple de requête SQL pour les films les plus populaires par genre
+query = '''
+SELECT c.name AS category, f.title, COUNT(i.inventory_id) AS inventory_count
+FROM film f
+JOIN film_category fc ON f.film_id = fc.film_id
+JOIN category c ON fc.category_id = c.category_id
+JOIN inventory i ON f.film_id = i.film_id
+GROUP BY c.name, f.title
+ORDER BY inventory_count DESC
+'''
+pd.read_sql(query, engine)
+          </code></pre>
+        </section>
+        <div class="github-link">
+          <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i>
+            Voir le notebook complet sur GitHub
+          </a>
+          <p class="github-description">
+            Accédez au notebook pour :
+            <ul>
+              <li>Le code source complet</li>
+              <li>Les requêtes SQL et analyses</li>
+              <li>Les visualisations et conclusions</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <div class="flex-sections">
+        <section class="project-results">
+          <h2><i class="fas fa-chart-bar"></i> Résultats & Statistiques</h2>
+          <ul>
+            <li><i class="fas fa-film"></i> Films analysés : 1000</li>
+            <li><i class="fas fa-users"></i> Clients : 599</li>
+            <li><i class="fas fa-database"></i> 15 tables relationnelles</li>
+            <li><i class="fas fa-chart-line"></i> Requêtes analytiques avancées (revenus, genres, profils clients…)</li>
+            <li><i class="fas fa-eye"></i> Visualisations interactives dans le notebook</li>
+          </ul>
+        </section>
+        <section class="project-features">
+          <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+          <ul>
+            <li><i class="fas fa-table"></i> Jointures SQL complexes</li>
+            <li><i class="fas fa-broom"></i> Nettoyage et validation des données</li>
+            <li><i class="fas fa-chart-pie"></i> Statistiques par genre, client, magasin</li>
+            <li><i class="fas fa-file-export"></i> Export des résultats</li>
+          </ul>
+        </section>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 ENDAYE Aimé – Portfolio Data Science</p>
+  </footer>
+</body>
+</html>

@@ -1,3 +1,13 @@
+/* Variables */
+:root {
+    --section-padding: 2rem;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+    --github-color: #24292e;
+    --github-hover: #2c974b;
+}
+
 /* Styles spécifiques aux pages de projets */
 .project-page {
     max-width: 1200px;
@@ -5,10 +15,31 @@
     padding: 0 1rem;
 }
 
+.project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .project-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: var(--primary-color);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.project-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
 }
 
 .project-info {
@@ -16,25 +47,75 @@
     gap: 2rem;
 }
 
-.project-details, .project-tech, .project-links, .project-gallery, .project-features, .project-code {
+.project-details, .project-tech, .project-features, .project-code, .project-results {
     background: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .project-info h2 {
     color: var(--text-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-info h2::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+.project-details h2::before {
+    content: "\f05a";  /* info circle icon */
+}
+
+.project-tech h2::before {
+    content: "\f7d9";  /* tools icon */
+}
+
+.project-features h2::before {
+    content: "\f201";  /* chart line icon */
+}
+
+.project-code h2::before {
+    content: "\f121";  /* code icon */
+}
+
+.project-results h2::before {
+    content: "\f080";  /* chart bar icon */
+}
+
+/* Listes dans les détails et fonctionnalités */
+.project-details ul, .project-features ul {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.project-details li, .project-features li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.project-details li::before, .project-features li::before {
+    content: "\f0da";  /* chevron-right icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
 }
 
 /* Technologies */
 .project-tech ul {
-    list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    list-style: none;
 }
 
 .project-tech li {
@@ -42,66 +123,107 @@
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
-}
-
-/* Listes dans les détails et fonctionnalités */
-.project-details ul, .project-features ul {
-    list-style: disc;
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.project-details li, .project-features li {
-    margin-bottom: 0.5rem;
-}
-
-/* Liens */
-.project-links {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.project-links .btn {
-    text-align: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* Code */
 .project-code {
-    overflow-x: auto;
+    margin: 2rem 0;
 }
 
 .project-code pre {
-    background: var(--section-bg);
+    background: #f8f9fa;
     padding: 1.5rem;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     overflow-x: auto;
+    border: 1px solid #e9ecef;
 }
 
 .project-code code {
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: var(--text-color);
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-/* Galerie d'images */
-.gallery-grid {
+/* Résultats et Visualisations */
+.results-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-.gallery-grid img {
+.result-item {
+    background: var(--section-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.result-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.result-item img {
     width: 100%;
     height: auto;
     border-radius: 4px;
-    transition: transform 0.3s;
+    margin-bottom: 1rem;
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.05);
+.result-item ul {
+    list-style: none;
+}
+
+.result-item li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 4px;
+}
+
+/* Sections flexibles */
+.flex-sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Statistiques et Points techniques */
+.project-results ul,
+.project-features ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.project-results li,
+.project-features li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-results li::before,
+.project-features li i {
+    color: var(--primary-color);
+}
+
+.project-results li {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.project-features li i {
+    font-size: 0.8rem;
 }
 
 /* Responsive */
@@ -110,12 +232,22 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .project-details, .project-code {
+    .project-details, .project-code, .project-results {
         grid-column: 1 / -1;
     }
+}
 
-    .project-gallery {
-        grid-column: 1 / -1;
+@media (max-width: 768px) {
+    .project-content h1 {
+        font-size: 2rem;
+    }
+
+    .flex-sections {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 1.5rem;
     }
 }
 
@@ -123,4 +255,229 @@
 .logo a {
     text-decoration: none;
     color: inherit;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Section code et GitHub */
+.code-section-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.project-code {
+    background: white;
+    padding: var(--section-padding);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.project-code pre {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    border: 1px solid #e9ecef;
+    margin: 0;
+}
+
+.project-code code {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Lien GitHub */
+.github-link {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--github-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-github:hover {
+    background-color: var(--github-hover);
+    transform: translateY(-2px);
+}
+
+.btn-github i {
+    font-size: 1.25rem;
+}
+
+.github-description {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.github-description ul {
+    list-style: none;
+    margin: 1rem 0 0 0;
+    padding: 0;
+}
+
+.github-description li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.github-description li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--github-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .code-section-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .github-link {
+        text-align: center;
+    }
+
+    .github-description ul {
+        text-align: left;
+        max-width: 400px;
+        margin: 1rem auto;
+    }
+}
+
+/* Tech Stack Section */
+.tech-stack {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.tech-stack h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tech-stack ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tech-stack li {
+    background: var(--section-bg);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.tech-stack li strong {
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments for tech stack */
+@media (max-width: 768px) {
+    .tech-stack ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Section exemples pratiques */
+.project-examples {
+    margin-top: 3rem;
+    background: white;
+    padding: var(--section-padding);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.example-item {
+    background: var(--section-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.example-item h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.example-item pre {
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0;
+}
+
+.example-item code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments for examples */
+@media (max-width: 768px) {
+    .examples-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .example-item {
+        padding: 1rem;
+    }
 } 

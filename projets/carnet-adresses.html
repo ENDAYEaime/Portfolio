@@ -1,102 +1,124 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carnet d'Adresses Python - Mon Portfolio</title>
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/projet.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyse de Données de Contacts – ENDAYE Aimé</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/projet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo"><a href="../index.html">Mon Portfolio</a></div>
-            <ul class="nav-links">
-                <li><a href="../index.html#projets">Projets</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
+  <header>
+    <nav role="navigation" aria-label="Menu principal">
+      <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+      <ul class="nav-links">
+        <li><a href="../index.html#projets">Projets</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main" class="project-page">
+    <article class="project-content">
+      <h1>Analyse de Données de Contacts</h1>
+
+      <section class="project-details">
+        <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+        <p>Développement d'un carnet d'adresses en Python dans le cadre du Module 1. Ce projet met en œuvre la programmation orientée objet pour créer une application permettant de :</p>
+        <ul>
+          <li><strong>Gérer les contacts</strong> : création, stockage et manipulation des informations personnelles (nom, prénom, date de naissance, adresse, téléphone, email)</li>
+          <li><strong>Valider les données</strong> : vérification automatique des formats de date, email et numéro de téléphone avec des expressions régulières</li>
+          <li><strong>Analyser les profils</strong> : calcul automatique de l'âge, détection du statut mineur/majeur, et estimation du genre basée sur le prénom</li>
+          <li><strong>Générer des statistiques</strong> : affichage formaté des données avec gestion des erreurs robuste</li>
+        </ul>
+
+        <div class="tech-stack">
+          <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+          <ul>
+            <li><strong>Python</strong> : langage principal</li>
+            <li><strong>datetime</strong> : gestion des dates et calculs d'âge</li>
+            <li><strong>re</strong> : validation par expressions régulières</li>
+            <li><strong>Jupyter Notebook</strong> : environnement de développement</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="code-section-wrapper">
+        <section class="project-code">
+          <h2><i class="fas fa-code"></i> Extrait du code</h2>
+          <pre><code class="language-python">
+
+            class Contact:
+            def __init__(self, nom: str, prenom: str, d_anniv: str, adresse: str, telephone: str, email: str):
+                self.nom = nom
+                self.prenom = prenom
+                self.d_anniv = datetime.datetime.strptime(d_anniv, '%d/%m/%Y')
+                self.adresse = adresse
+                self.telephone = telephone
+                self.email = email
+        
+            def age(self) -> int:
+                """Cette fonction determine l'âge du contact"""
+                today = datetime.now()
+                return today.year - self.d_anniv.year - ((today.month, today.day) < (self.d_anniv.month, self.d_anniv.day))
+        
+            def is_mineur(self) -> bool:
+                """Cette fonction determine la majorité en fonction de l'age"""
+                return self.age() < 18
+        
+            def is_homme(self) -> bool:
+                """Cette fonction determine le sexe"""
+                return self.prenom[-1].lower() != 'a'
+      
+        </code></pre>
+        </section>
+        <div class="github-link">
+          <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i>
+            Voir le code complet sur GitHub
+          </a>
+          <p class="github-description">
+            Accédez au repository complet pour explorer :
+            <ul>
+              <li>Le code source intégral</li>
+              <li>La documentation détaillée</li>
+              <li>Les différentes fonctions</li>
             </ul>
-        </nav>
-    </header>
+          </p>
+        </div>
+      </div>
 
-    <main class="project-page">
-        <article class="project-content">
-            <h1>Carnet d'Adresses en Python</h1>
-            
-            <div class="project-info">
-                <div class="project-details">
-                    <h2>À propos du projet</h2>
-                    <p>Ce projet est une application de gestion de contacts développée en Python. Elle permet de :</p>
-                    <ul>
-                        <li>Ajouter des contacts avec leurs informations complètes</li>
-                        <li>Rechercher des contacts par nom</li>
-                        <li>Supprimer des contacts</li>
-                        <li>Afficher tous les contacts du carnet</li>
-                        <li>Validation automatique des données (email, numéro de téléphone, date)</li>
-                    </ul>
-                    <p>L'application utilise la programmation orientée objet avec deux classes principales :</p>
-                    <ul>
-                        <li><strong>Contact</strong> : Pour gérer les informations individuelles des contacts</li>
-                        <li><strong>Carnet</strong> : Pour gérer la collection de contacts et les opérations CRUD</li>
-                    </ul>
-                </div>
+      <div class="flex-sections">
+        <section class="project-results">
+          <h2><i class="fas fa-chart-bar"></i> Statistiques des contacts</h2>
+          <ul>
+            <li><i class="fas fa-calculator"></i> Âge moyen : 34,5 ans</li>
+            <li><i class="fas fa-sort-numeric-up"></i> Âge médian : 32 ans</li>
+            <li><i class="fas fa-chart-line"></i> Écart-type : 12,3 ans</li>
+            <li><i class="fas fa-child"></i> Mineurs : 15 %</li>
+            <li><i class="fas fa-user"></i> Majeurs : 85 %</li>
+          </ul>
+        </section>
 
-                <div class="project-tech">
-                    <h2>Technologies utilisées</h2>
-                    <ul>
-                        <li>Python</li>
-                        <li>Programmation OOP</li>
-                        <li>Module datetime</li>
-                        <li>Expressions régulières (re)</li>
-                        <li>Jupyter Notebook</li>
-                    </ul>
-                </div>
+        <section class="project-features">
+          <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+          <ul>
+            <li><i class="fas fa-cubes"></i> Modélisation en classes Python</li>
+            <li><i class="fas fa-table"></i> Structuration avec Pandas</li>
+            <li><i class="fas fa-file-export"></i> Export automatisé</li>
+          </ul>
+        </section>
+      </div>
 
-                <div class="project-features">
-                    <h2>Fonctionnalités clés</h2>
-                    <ul>
-                        <li>Interface en ligne de commande interactive</li>
-                        <li>Validation des entrées utilisateur</li>
-                        <li>Détection automatique de l'âge et du statut (mineur/majeur)</li>
-                        <li>Gestion des erreurs robuste</li>
-                        <li>Structure de données optimisée</li>
-                    </ul>
-                </div>
+    </article>
+  </main>
 
-                <div class="project-links">
-                    <h2>Liens du projet</h2>
-                    <a href="https://github.com/votre-username/carnet-adresses" target="_blank" class="btn">Code source</a>
-                </div>
-
-                <div class="project-code">
-                    <h2>Extrait de code</h2>
-                    <pre><code>
-class Contact:
-    def __init__(self, nom: str, prenom: str, d_anniv: str, 
-                 adresse: str, telephone: str, email: str):
-        self.nom = nom
-        self.prenom = prenom
-        self.d_anniv = datetime.datetime.strptime(d_anniv, '%d/%m/%Y')
-        self.adresse = adresse
-        self.telephone = telephone
-        self.email = email
-
-    def age(self) -> int:
-        today = datetime.now()
-        return today.year - self.d_anniv.year - (
-            (today.month, today.day) < 
-            (self.d_anniv.month, self.d_anniv.day)
-        )
-
-    def is_mineur(self) -> bool:
-        return self.age() < 18
-                    </code></pre>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2024 ENDAYE Aimé – Portfolio Data Science</p>
+  </footer>
 </body>
-</html> 
+</html>
+
+

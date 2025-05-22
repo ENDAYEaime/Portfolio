@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
+    <title>ENDAYE Aimé - Portfolio Data Science 🚀</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Mon Portfolio</div>
+            <div class="logo">ENDAYE Aimé</div>
             <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
                 <li><a href="#projets">Projets</a></li>
+                <li><a href="#competences">Compétences</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -19,39 +22,297 @@
 
     <main>
         <section class="hero">
-            <h1>Bienvenue sur mon Portfolio</h1>
-            <p>Découvrez mes projets et réalisations</p>
+            <h1>Portfolio Data Science 📊</h1>
+            <p>Endayé Aimé</p>
+
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>À propos de moi 👨‍💻</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Je suis Endayé Aimé, passionné par l'informatique et la Data Science, et avant tout autodidacte. Mon parcours a été rythmé par des heures d'apprentissage sur Dataquest, où j'ai bâti mes premières compétences en Python, en statistiques et en web scraping. Pour approfondir mes connaissances, j'ai suivi de nombreux modules sur Udemy (data science, visualisation avancée, HTML, CSS) qui m'ont permis de maîtriser l'écosystème Python (Pandas, NumPy, Seaborn) et les fondamentaux du SQL.</p>
+                        
+                        <p>Aujourd'hui, je peaufine mon expertise au sein de DSR School, où je me forme de manière intensive aux méthodes et outils professionnels :</p>
+                        
+                        <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                            <li><strong>🐍 Python avancé :</strong> POO, automatisation de workflows, API</li>
+                            <li><strong>🗄️ Bases de données & SQL :</strong> modélisation relationnelle, requêtes SQLite</li>
+                            <li><strong>🧹 Data cleaning :</strong> nettoyage et préparation des données</li>
+                            <li><strong>📊 Data Visualisation & BI :</strong> Matplotlib, Seaborn, Power BI, Tableau</li>
+                            <li><strong>🚀 Streamlit :</strong> création d'applications web interactives</li>
+                            <li><strong>⚙️ DevOps & collaboration :</strong> Git, GitHub, méthodes agiles (SCRUM), Docker</li>
+                        </ul>
+                        
+                        <p>À travers ces activités d'apprentissage variées, j'ai cultivé autonomie, curiosité et rigueur. J'aime explorer de nouveaux frameworks, résoudre des problèmes concrets et partager mes découvertes. Mon objectif ? Transformer chaque donnée en insight actionnable et contribuer à des projets tech innovants. 🎯</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <i class="fas fa-database"></i>
+                            <h3>Analyse de Données 📈</h3>
+                            <p>Python, Pandas, NumPy</p>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-code"></i>
+                            <h3>Développement Web 💻</h3>
+                            <p>HTML, CSS, Flask, Streamlit</p>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Visualisation 📊</h3>
+                            <p>Matplotlib, Seaborn, Plotly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="projets" class="projects">
-            <h2>Mes Projets</h2>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <h3>Carnet d'Adresses Python</h3>
-                    <p>Une application de gestion de contacts en ligne de commande développée en Python. Utilise la programmation orientée objet et inclut la validation des données.</p>
-                    <a href="projets/carnet-adresses.html" class="btn">Voir le projet</a>
-                </article>
-                <article class="project-card">
-                    <h3>Projet 2</h3>
-                    <p>Description du projet 2</p>
-                    <a href="projets/projet2.html" class="btn">Voir le projet</a>
-                </article>
-                <!-- Vous pourrez ajouter plus de projets ici -->
+            <div class="container">
+                <h2>Mes Projets 💼</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-address-book"></i>
+                            <h3>Gestion de Contacts avec Python</h3>
+                        </div>
+                        <p>Application de gestion de données personnelles avec validation automatique et analyse statistique des contacts. Utilisation de pandas pour l'analyse et matplotlib pour la visualisation.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Data Analysis</span>
+                            <span>Matplotlib</span>
+                        </div>
+                        <a href="projets/carnet-adresses.html" class="btn">Voir le projet</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-book-reader"></i>
+                            <h3>Guide Jupyter Notebook</h3>
+                        </div>
+                        <p>Guide pratique pour maîtriser Jupyter Notebook, couvrant l'exécution de code, les raccourcis clavier, la gestion d'état et l'analyse de données avec un exemple concret.</p>
+                        <div class="project-tags">
+                            <span>Jupyter</span>
+                            <span>Python</span>
+                            <span>Data Analysis</span>
+                            <span>CSV</span>
+                        </div>
+                        <a href="projets/jupyter-tutorial.html" class="btn">Voir le projet</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-code"></i>
+                            <h3>Fondamentaux Python</h3>
+                        </div>
+                        <p>Projet complet de remise à niveau en Python couvrant la programmation orientée objet, les structures de données, la gestion des fichiers et les bonnes pratiques de développement.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>OOP</span>
+                            <span>Algorithms</span>
+                            <span>Best Practices</span>
+                        </div>
+                        <a href="projets/python-basics.html" class="btn">Voir le projet</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-futbol"></i>
+                            <h3>Analyse des Matchs de Football Européens</h3>
+                        </div>
+                        <p>Analyse approfondie des résultats des matchs de football européens, incluant des statistiques détaillées, des visualisations de données et des insights sur les performances des équipes.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Data Analysis</span>
+                            <span>Pandas</span>
+                            <span>Visualization</span>
+                        </div>
+                        <a href="projets/football-analysis.html" class="btn">Voir le projet</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-film"></i>
+                            <h3>Analyse de Données Cinématographiques</h3>
+                        </div>
+                        <p>Exploration, nettoyage et analyse d'une base de données de films (type Sakila) avec Python, SQL et Jupyter Notebook. Statistiques, visualisations et requêtes avancées sur les films, clients et locations.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>SQL</span>
+                            <span>Pandas</span>
+                            <span>Jupyter</span>
+                        </div>
+                        <a href="projets/analyse-cinematographique.html" class="btn">Voir le projet</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-cubes"></i>
+                            <h3>Exercices NumPy</h3>
+                        </div>
+                        <p>Une série d'exercices pour apprendre et pratiquer l'utilisation de la bibliothèque NumPy en Python, couvrant divers aspects de la manipulation de tableaux et de l'analyse de données.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>NumPy</span>
+                            <span>Data Analysis</span>
+                        </div>
+                        <a href="projets/exo-numpy.html" class="btn">Voir le projet</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-table"></i>
+                            <h3>Exercices Pandas</h3>
+                        </div>
+                        <p>Une série d'exercices pour apprendre et pratiquer l'utilisation de la bibliothèque Pandas en Python, couvrant divers aspects de la manipulation de données et de l'analyse statistique.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Data Analysis</span>
+                        </div>
+                        <a href="projets/exo-panda.html" class="btn">Voir le projet</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-phone-alt"></i>
+                            <h3>Analyse d'un Journal d'Appel</h3>
+                        </div>
+                        <p>Analyse d'un journal d'appel pour extraire des informations pertinentes et générer des insights sur les habitudes d'appel. Utilisation de techniques d'analyse de données pour optimiser les ressources.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Data Analysis</span>
+                        </div>
+                        <a href="projets/module-4-challenge.html" class="btn">Voir le projet</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-project-diagram"></i>
+                            <h3>Mise en œuvre d'un Projet Data</h3>
+                        </div>
+                        <p>Application des principes de la gestion de projet agile, en particulier la méthode SCRUM, dans le cadre d'un projet de science des données. Comprend le choix des données, le cadrage du projet, et la planification des sprints.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Data Analysis</span>
+                        </div>
+                        <a href="projets/mise-en-oeuvre-projet-data.html" class="btn">Voir le projet</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-network-wired"></i>
+                            <h3>Projet API</h3>
+                        </div>
+                        <p>Exploration de l'utilisation des API pour récupérer et manipuler des données en temps réel, incluant l'intégration d'API tierces et la création d'une API simple avec Flask.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>API</span>
+                            <span>Data Manipulation</span>
+                        </div>
+                        <a href="projets/api-project.html" class="btn">Voir le projet</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Analyse des Applications Mobiles</h3>
+                        </div>
+                        <p>Analyse des données des applications mobiles pour identifier les applications rentables sur l'App Store et Google Play. Inclut le nettoyage des données et l'analyse des genres populaires.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Data Analysis</span>
+                            <span>Jupyter</span>
+                        </div>
+                        <a href="projets/basics-project.html" class="btn">Voir le projet</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-hacker-news"></i>
+                            <h3>Exploration des Publications Hacker News</h3>
+                        </div>
+                        <p>Comparaison des publications `Ask HN` et `Show HN` pour déterminer lesquelles reçoivent le plus de commentaires et à quelles heures publier pour maximiser l'engagement.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Data Analysis</span>
+                            <span>Jupyter</span>
+                        </div>
+                        <a href="projets/hacker-news-project.html" class="btn">Voir le projet</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="competences" class="skills">
+            <div class="container">
+                <h2>Compétences en Data Science 🛠️</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>💻 Langages & Outils</h3>
+                        <ul>
+                            <li><i class="fab fa-python"></i> Python (Pandas, NumPy)</li>
+                            <li><i class="fas fa-database"></i> SQL</li>
+                            <li><i class="fab fa-html5"></i> HTML/CSS</li>
+                            <li><i class="fas fa-terminal"></i> Jupyter Notebook</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🚀 Applications & Développement Web</h3>
+                        <ul>
+                            <li><i class="fas fa-rocket"></i> Streamlit</li>
+                            <li><i class="fas fa-chart-bar"></i> Flask</li>
+                            <li><i class="fas fa-cogs"></i> API Development</li>
+                            <li><i class="fas fa-globe"></i> Applications interactives</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>📊 Visualisation & Reporting</h3>
+                        <ul>
+                            <li><i class="fas fa-chart-line"></i> Matplotlib</li>
+                            <li><i class="fas fa-chart-pie"></i> Seaborn</li>
+                            <li><i class="fas fa-chart-area"></i> Plotly</li>
+                            <li><i class="fas fa-file-powerpoint"></i> Power BI</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
-            <h2>Contact</h2>
-            <div class="contact-links">
-                <a href="https://github.com/votre-username" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/votre-profil" target="_blank">LinkedIn</a>
-                <a href="mailto:votre-email@example.com">Email</a>
+            <div class="container">
+                <h2>Contact 📧</h2>
+                <p>Contactez-moi.</p>
+                <div class="contact-links">
+                    <a href="https://github.com/ENDAYEaime" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/aime-endaye-2a57b0150" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://www.kaggle.com/endayemazina" target="_blank">
+                        <i class="fab fa-kaggle"></i> Kaggle
+                    </a>
+                    <a href="tel:0769107434">
+                        <i class="fas fa-phone"></i> 07 69 10 74 34
+                    </a>
+                    <a href="mailto:endayeaime@gmail.com">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+        <p>&copy; 2024 ENDAYE Aimé - Portfolio Data Science. Tous droits réservés.</p>
     </footer>
 </body>
 </html> 
