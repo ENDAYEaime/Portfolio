@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mise en œuvre d'un Projet Data – ENDAYE Aimé</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/projet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Menu principal">
+      <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+      <ul class="nav-links">
+        <li><a href="../index.html#projets">Projets</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main" class="project-page">
+    <article class="project-content">
+      <h1>Mise en œuvre d'un Projet Data</h1>
+
+      <section class="project-details">
+        <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+        <p>Ce projet vise à appliquer les principes de la gestion de projet agile, en particulier la méthode SCRUM, dans le cadre d'un projet de science des données. Les étapes clés incluent :</p>
+        <ul>
+          <li><strong>Choix du jeu de données</strong> : sélection et préparation des données pour l'analyse</li>
+          <li><strong>Cadrage du projet</strong> : définition des objectifs et des livrables</li>
+          <li><strong>Planification des sprints</strong> : organisation du travail en itérations</li>
+        </ul>
+
+        <div class="tech-stack">
+          <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+          <ul>
+            <li><strong>Python</strong> : langage principal</li>
+            <li><strong>Pandas</strong> : bibliothèque pour la manipulation de données</li>
+            <li><strong>Jupyter Notebook</strong> : environnement de développement</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="code-section-wrapper">
+        <section class="project-code">
+          <h2><i class="fas fa-code"></i> Extrait du code</h2>
+          <pre><code class="language-python">
+
+            # Exemple de code pour la mise en œuvre d'un projet data
+            import pandas as pd
+            df = pd.read_csv('global_biodiversity_dataset.csv')
+            print(df.head())
+
+          </code></pre>
+        </section>
+        <div class="github-link">
+          <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i>
+            Voir le code complet sur GitHub
+          </a>
+          <p class="github-description">
+            Accédez au repository complet pour explorer :
+            <ul>
+              <li>Le code source intégral</li>
+              <li>Les analyses détaillées</li>
+              <li>Les visualisations générées</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <div class="flex-sections">
+        <section class="project-results">
+          <h2><i class="fas fa-chart-bar"></i> Résultats du projet</h2>
+          <ul>
+            <li><i class="fas fa-database"></i> Données analysées : 1000+</li>
+            <li><i class="fas fa-chart-line"></i> Sprints complétés : 3</li>
+            <li><i class="fas fa-trophy"></i> Objectifs atteints</li>
+          </ul>
+        </section>
+
+        <section class="project-features">
+          <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+          <ul>
+            <li><i class="fas fa-database"></i> Manipulation avancée de données</li>
+            <li><i class="fas fa-chart-pie"></i> Visualisation graphique</li>
+            <li><i class="fas fa-brain"></i> Analyse de données</li>
+          </ul>
+        </section>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 ENDAYE Aimé – Portfolio Data Science</p>
+  </footer>
+</body>
+</html> 
