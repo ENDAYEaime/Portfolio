@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse des Matchs de Football Européens – ENDAYE Aimé</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+    <header>
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#projets">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="project-page">
+        <article class="project-content">
+            <h1>Analyse des Matchs de Football Européens</h1>
+
+            <section class="project-details">
+                <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+                <p>Analyse approfondie des résultats des matchs de football européens. Ce projet utilise des techniques avancées d'analyse de données pour :</p>
+                <ul>
+                    <li><strong>Analyser les performances</strong> : étude statistique des résultats des matchs et des tendances par équipe</li>
+                    <li><strong>Visualiser les données</strong> : création de graphiques et visualisations pour illustrer les tendances clés</li>
+                    <li><strong>Prédire les résultats</strong> : analyse prédictive basée sur les performances historiques</li>
+                    <li><strong>Identifier les patterns</strong> : découverte de motifs dans les données de matchs</li>
+                </ul>
+                <div class="tech-stack">
+                    <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+                    <ul>
+                        <li><strong>Python</strong></li>
+                        <li><strong>Pandas</strong></li>
+                        <li><strong>Matplotlib</strong> / <strong>Seaborn</strong></li>
+                        <li><strong>Jupyter Notebook</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="code-section-wrapper">
+                <section class="project-code">
+                    <h2><i class="fas fa-code"></i> Extrait du code</h2>
+                    <pre><code class="language-python">
+def analyser_performances_equipe(df, equipe):
+    """Analyse les performances d'une équipe spécifique"""
+    matchs_equipe = df[(df['home_team'] == equipe) | (df['away_team'] == equipe)]
+    total_matchs = len(matchs_equipe)
+    victoires = len(matchs_equipe[
+        ((matchs_equipe['home_team'] == equipe) & (matchs_equipe['home_score'] > matchs_equipe['away_score'])) |
+        ((matchs_equipe['away_team'] == equipe) & (matchs_equipe['away_score'] > matchs_equipe['home_score']))
+    ])
+    return {
+        'total_matchs': total_matchs,
+        'victoires': victoires,
+        'ratio_victoires': victoires / total_matchs
+    }
+                    </code></pre>
+                </section>
+                <div class="github-link">
+                    <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i>
+                        Voir le code complet sur GitHub
+                    </a>
+                    <p class="github-description">
+                        Accédez au repository complet pour explorer :
+                        <ul>
+                            <li>Le code source intégral</li>
+                            <li>Les données analysées</li>
+                            <li>Les visualisations générées</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex-sections">
+                <section class="project-results">
+                    <h2><i class="fas fa-chart-bar"></i> Statistiques clés</h2>
+                    <ul>
+                        <li><i class="fas fa-futbol"></i> Matchs analysés : 1000+</li>
+                        <li><i class="fas fa-trophy"></i> Équipes étudiées : 50+</li>
+                        <li><i class="fas fa-chart-line"></i> Saisons couvertes : 5</li>
+                        <li><i class="fas fa-percentage"></i> Précision des prédictions : 75%</li>
+                    </ul>
+                </section>
+                <section class="project-features">
+                    <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+                    <ul>
+                        <li><i class="fas fa-database"></i> Nettoyage des données</li>
+                        <li><i class="fas fa-chart-pie"></i> Visualisation graphique</li>
+                        <li><i class="fas fa-brain"></i> Analyse prédictive</li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ENDAYE Aimé – Portfolio Data Science</p>
+    </footer>
+</body>
+</html> 

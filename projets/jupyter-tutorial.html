@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apprendre Jupyter Notebook – ENDAYE Aimé</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+    <header>
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#projets">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="project-page">
+        <article class="project-content">
+            <h1>Guide d'Apprentissage Jupyter Notebook</h1>
+            
+            <section class="project-details">
+                <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+                <p>Apprendre et maîtriser Jupyter Notebook, un outil essentiel en data science. Ce tutoriel couvre :</p>
+                <ul>
+                    <li><strong>Exécution de code</strong> : manipulation des cellules et exécution du code Python</li>
+                    <li><strong>Raccourcis clavier</strong> : optimisation du flux de travail avec les commandes essentielles</li>
+                    <li><strong>Gestion d'état</strong> : compréhension de l'état du kernel et des variables</li>
+                    <li><strong>Markdown</strong> : création de documentation interactive avec du texte formaté</li>
+                </ul>
+
+                <div class="tech-stack">
+                    <h3><i class="fas fa-tools"></i> Environnement technique</h3>
+                    <ul>
+                        <li><strong>Jupyter Notebook</strong> : environnement interactif</li>
+                        <li><strong>Python 3</strong> : langage de programmation</li>
+                        <li><strong>Markdown</strong> : documentation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="code-section-wrapper">
+                <section class="project-code">
+                    <h2><i class="fas fa-code"></i> Extrait du code</h2>
+                    <pre><code class="language-python">
+def welcome(a_string):
+    welcome_msg = 'Welcome to ' + a_string + '!'
+    return welcome_msg
+
+# Exemples d'utilisation
+dq = 'Dataquest'
+jn = 'Jupyter Notebook'
+py = 'Python'
+
+# Démonstration des résultats
+print(welcome(dq))    # Welcome to Dataquest!
+print(welcome(jn))    # Welcome to Jupyter Notebook!
+print(welcome(py))    # Welcome to Python!
+
+# Exemple de manipulation de données
+opened_file = open('AppleStore.csv')
+from csv import reader
+read_file = reader(opened_file)
+apps_data = list(read_file)
+
+# Affichage des premières lignes
+header = apps_data[0]
+first_row = apps_data[1]
+print("\nColonnes :", header)
+print("Premier app :", first_row)</code></pre>
+                </section>
+                <div class="github-link">
+                    <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i>
+                        Voir le code complet sur GitHub
+                    </a>
+                    <p class="github-description">
+                        Le repository contient :
+                        <ul>
+                            <li>Le notebook complet</li>
+                            <li>Le dataset d'exemple</li>
+                            <li>Les différentes commandes</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex-sections">
+                <section class="project-results">
+                    <h2><i class="fas fa-graduation-cap"></i> Points d'apprentissage</h2>
+                    <ul>
+                        <li><i class="fas fa-terminal"></i> Commandes du kernel</li>
+                        <li><i class="fas fa-keyboard"></i> Raccourcis efficaces</li>
+                        <li><i class="fas fa-code-branch"></i> Gestion des états</li>
+                        <li><i class="fas fa-file-alt"></i> Markdown avancé</li>
+                    </ul>
+                </section>
+
+                <section class="project-features">
+                    <h2><i class="fas fa-cogs"></i> Fonctionnalités couvertes</h2>
+                    <ul>
+                        <li><i class="fas fa-play"></i> Exécution de cellules</li>
+                        <li><i class="fas fa-sync"></i> Redémarrage du kernel</li>
+                        <li><i class="fas fa-history"></i> Historique des commandes</li>
+                        <li><i class="fas fa-file-export"></i> Export des notebooks</li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ENDAYE Aimé – Portfolio Data Science</p>
+    </footer>
+</body>
+</html> 
