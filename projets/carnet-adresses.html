@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnet d'Adresses Python - Mon Portfolio</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projet.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="../index.html">Mon Portfolio</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#projets">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-page">
+        <article class="project-content">
+            <h1>Carnet d'Adresses en Python</h1>
+            
+            <div class="project-info">
+                <div class="project-details">
+                    <h2>À propos du projet</h2>
+                    <p>Ce projet est une application de gestion de contacts développée en Python. Elle permet de :</p>
+                    <ul>
+                        <li>Ajouter des contacts avec leurs informations complètes</li>
+                        <li>Rechercher des contacts par nom</li>
+                        <li>Supprimer des contacts</li>
+                        <li>Afficher tous les contacts du carnet</li>
+                        <li>Validation automatique des données (email, numéro de téléphone, date)</li>
+                    </ul>
+                    <p>L'application utilise la programmation orientée objet avec deux classes principales :</p>
+                    <ul>
+                        <li><strong>Contact</strong> : Pour gérer les informations individuelles des contacts</li>
+                        <li><strong>Carnet</strong> : Pour gérer la collection de contacts et les opérations CRUD</li>
+                    </ul>
+                </div>
+
+                <div class="project-tech">
+                    <h2>Technologies utilisées</h2>
+                    <ul>
+                        <li>Python</li>
+                        <li>Programmation OOP</li>
+                        <li>Module datetime</li>
+                        <li>Expressions régulières (re)</li>
+                        <li>Jupyter Notebook</li>
+                    </ul>
+                </div>
+
+                <div class="project-features">
+                    <h2>Fonctionnalités clés</h2>
+                    <ul>
+                        <li>Interface en ligne de commande interactive</li>
+                        <li>Validation des entrées utilisateur</li>
+                        <li>Détection automatique de l'âge et du statut (mineur/majeur)</li>
+                        <li>Gestion des erreurs robuste</li>
+                        <li>Structure de données optimisée</li>
+                    </ul>
+                </div>
+
+                <div class="project-links">
+                    <h2>Liens du projet</h2>
+                    <a href="https://github.com/votre-username/carnet-adresses" target="_blank" class="btn">Code source</a>
+                </div>
+
+                <div class="project-code">
+                    <h2>Extrait de code</h2>
+                    <pre><code>
+class Contact:
+    def __init__(self, nom: str, prenom: str, d_anniv: str, 
+                 adresse: str, telephone: str, email: str):
+        self.nom = nom
+        self.prenom = prenom
+        self.d_anniv = datetime.datetime.strptime(d_anniv, '%d/%m/%Y')
+        self.adresse = adresse
+        self.telephone = telephone
+        self.email = email
+
+    def age(self) -> int:
+        today = datetime.now()
+        return today.year - self.d_anniv.year - (
+            (today.month, today.day) < 
+            (self.d_anniv.month, self.d_anniv.day)
+        )
+
+    def is_mineur(self) -> bool:
+        return self.age() < 18
+                    </code></pre>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+    </footer>
+</body>
+</html> 
