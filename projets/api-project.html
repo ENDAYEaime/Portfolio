@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet API – ENDAYE Aimé</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/projet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Menu principal">
+      <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+      <ul class="nav-links">
+        <li><a href="../index.html#projets">Projets</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main" class="project-page">
+    <article class="project-content">
+      <h1>Projet API</h1>
+
+      <section class="project-details">
+        <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+        <p>Ce projet explore l'utilisation des API pour récupérer et manipuler des données en temps réel. Il inclut des exemples d'intégration d'API tierces et de création d'une API simple avec Flask.</p>
+        <ul>
+          <li><strong>Intégration d'API tierces</strong> : récupération de données en temps réel</li>
+          <li><strong>Création d'une API</strong> : développement avec Flask</li>
+          <li><strong>Manipulation des données</strong> : traitement et visualisation des données récupérées</li>
+        </ul>
+
+        <div class="tech-stack">
+          <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+          <ul>
+            <li><strong>Python</strong> : langage principal</li>
+            <li><strong>Flask</strong> : framework pour créer des API</li>
+            <li><strong>Requests</strong> : bibliothèque pour les requêtes HTTP</li>
+            <li><strong>Jupyter Notebook</strong> : environnement de développement</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="code-section-wrapper">
+        <section class="project-code">
+          <h2><i class="fas fa-code"></i> Extrait du code</h2>
+          <pre><code class="language-python">
+
+            from flask import Flask, jsonify
+            app = Flask(__name__)
+
+            @app.route('/api/data', methods=['GET'])
+            def get_data():
+                data = {"message": "Hello, World!"}
+                return jsonify(data)
+
+            if __name__ == '__main__':
+                app.run(debug=True)
+
+          </code></pre>
+        </section>
+        <div class="github-link">
+          <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i>
+            Voir le code complet sur GitHub
+          </a>
+          <p class="github-description">
+            Accédez au repository complet pour explorer :
+            <ul>
+              <li>Le code source intégral</li>
+              <li>La documentation détaillée</li>
+              <li>Les différentes fonctions</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <div class="flex-sections">
+        <section class="project-results">
+          <h2><i class="fas fa-chart-bar"></i> Résultats & Statistiques</h2>
+          <ul>
+            <li><i class="fas fa-server"></i> API en temps réel</li>
+            <li><i class="fas fa-code"></i> Exemples de requêtes HTTP</li>
+            <li><i class="fas fa-database"></i> Manipulation de données JSON</li>
+          </ul>
+        </section>
+
+        <section class="project-features">
+          <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+          <ul>
+            <li><i class="fas fa-network-wired"></i> Intégration d'API tierces</li>
+            <li><i class="fas fa-cube"></i> Développement d'API avec Flask</li>
+            <li><i class="fas fa-chart-pie"></i> Visualisation des données</li>
+          </ul>
+        </section>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 ENDAYE Aimé – Portfolio Data Science</p>
+  </footer>
+</body>
+</html> 

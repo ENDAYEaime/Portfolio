@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploration des Publications Hacker News – ENDAYE Aimé</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/projet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Menu principal">
+      <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+      <ul class="nav-links">
+        <li><a href="../index.html#projets">Projets</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main" class="project-page">
+    <article class="project-content">
+      <h1>Exploration des Publications Hacker News</h1>
+
+      <section class="project-details">
+        <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+        <p>Ce projet compare deux types de publications sur Hacker News : `Ask HN` et `Show HN`. L'objectif est de déterminer lequel de ces types reçoit le plus de commentaires en moyenne et d'identifier les heures optimales pour publier afin de maximiser les commentaires.</p>
+        <ul>
+          <li><strong>Analyse des commentaires</strong> : comparaison des commentaires moyens entre `Ask HN` et `Show HN`</li>
+          <li><strong>Optimisation du temps de publication</strong> : identification des heures de publication optimales</li>
+          <li><strong>Analyse statistique</strong> : Étude de la donnée pour analyser et représenter les insights obtenus</li>
+        </ul>
+
+        <div class="tech-stack">
+          <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+          <ul>
+            <li><strong>Python</strong> : langage principal</li>
+            <li><strong>Pandas</strong> : manipulation et analyse de données</li>
+            <li><strong>Jupyter Notebook</strong> : environnement de développement</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="code-section-wrapper">
+        <section class="project-code">
+          <h2><i class="fas fa-code"></i> Extrait du code</h2>
+          <pre><code class="language-python">
+
+            import csv
+
+            # Lecture des données
+            with open('hacker_news.csv') as f:
+                hn = list(csv.reader(f))
+
+            # Suppression des en-têtes
+            headers = hn[0]
+            hn = hn[1:]
+
+            # Séparation des publications `Ask HN` et `Show HN`
+            ask_posts = []
+            show_posts = []
+
+            for post in hn:
+                title = post[1]
+                if title.lower().startswith("ask hn"):
+                    ask_posts.append(post)
+                elif title.lower().startswith("show hn"):
+                    show_posts.append(post)
+
+          </code></pre>
+        </section>
+        <div class="github-link">
+          <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i>
+            Voir le code complet sur GitHub
+          </a>
+          <p class="github-description">
+            Accédez au repository complet pour explorer :
+            <ul>
+              <li>Le code source intégral</li>
+              <li>La documentation détaillée</li>
+              <li>Les différentes fonctions</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <div class="flex-sections">
+        <section class="project-results">
+          <h2><i class="fas fa-chart-bar"></i> Résultats & Statistiques</h2>
+          <ul>
+            <li><i class="fas fa-comments"></i> `Ask HN` reçoit plus de commentaires en moyenne</li>
+            <li><i class="fas fa-clock"></i> Heures optimales pour publier : 15:00 - 16:00</li>
+            <li><i class="fas fa-chart-pie"></i> Analyse statistique</li>
+          </ul>
+        </section>
+
+        <section class="project-features">
+          <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+          <ul>
+            <li><i class="fas fa-broom"></i> Nettoyage des données</li>
+            <li><i class="fas fa-chart-bar"></i> Analyse des données</li>
+            <li><i class="fas fa-chart-pie"></i> Analyse statistique</li>
+          </ul>
+        </section>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 ENDAYE Aimé – Portfolio Data Science</p>
+  </footer>
+</body>
+</html> 

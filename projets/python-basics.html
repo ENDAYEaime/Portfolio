@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remise à niveau Python – ENDAYE Aimé</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+    <header>
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#projets">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="project-page">
+        <article class="project-content">
+            <h1>Fondamentaux de Python pour la Data Science</h1>
+            
+            <section class="project-details">
+                <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+                <p>Projet complet de remise à niveau en Python, couvrant tous les aspects fondamentaux nécessaires pour la data science :</p>
+                <ul>
+                    <li><strong>Structures de données</strong> : manipulation avancée des listes, dictionnaires et ensembles</li>
+                    <li><strong>Programmation orientée objet</strong> : création de classes, héritage et polymorphisme</li>
+                    <li><strong>Gestion des fichiers</strong> : lecture/écriture de données et gestion des exceptions</li>
+                    <li><strong>Algorithmes</strong> : implémentation de solutions pour divers problèmes</li>
+                </ul>
+
+                <div class="tech-stack">
+                    <h3><i class="fas fa-tools"></i> Concepts couverts</h3>
+                    <ul>
+                        <li><strong>Types de base</strong> : nombres, chaînes, booléens</li>
+                        <li><strong>Structures de contrôle</strong> : boucles et conditions</li>
+                        <li><strong>Fonctions</strong> : définition et utilisation</li>
+                        <li><strong>Classes</strong> : POO en Python</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="code-section-wrapper">
+                <section class="project-code">
+                    <h2><i class="fas fa-code"></i> Extraits de code</h2>
+                    <pre><code class="language-python">
+# Exemple de POO avec une classe Véhicule
+class Vehicule:
+    def __init__(self, marque, modele, couleur):
+        self.marque = marque
+        self.modele = modele
+        self.couleur = couleur
+        self.kilometrage = 0
+
+    def afficher_description(self):
+        return f"{self.couleur} {self.marque} {self.modele}, {self.kilometrage} km"
+
+    def ajouter_kilometrage(self, km):
+        if km >= 0:
+            self.kilometrage += km
+            print(f"{km} km ajoutés. Total : {self.kilometrage} km")
+        else:
+            print("Kilométrage invalide")
+
+# Exemple de gestion d'exceptions
+def lire_fichier_et_traiter(chemin_fichier):
+    try:
+        with open(chemin_fichier, 'r') as fichier:
+            contenu = fichier.read()
+            nombres = [int(x) for x in contenu.split(',')]
+            return sum(nombres) / len(nombres)
+    except FileNotFoundError:
+        print(f"Fichier '{chemin_fichier}' non trouvé.")
+    except ValueError:
+        print("Format de données invalide.")
+    except Exception as e:
+        print(f"Erreur : {e}")
+</code></pre>
+                </section>
+                <div class="github-link">
+                    <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i>
+                        Voir le code complet sur GitHub
+                    </a>
+                    <p class="github-description">
+                        Le repository contient :
+                        <ul>
+                            <li>Exercices pratiques</li>
+                            <li>Solutions détaillées</li>
+                            <li>Notebooks Jupyter</li>
+                            <li>Documentation complète</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex-sections">
+                <section class="project-results">
+                    <h2><i class="fas fa-tasks"></i> Compétences acquises</h2>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Manipulation de données</li>
+                        <li><i class="fas fa-check"></i> Programmation orientée objet</li>
+                        <li><i class="fas fa-check"></i> Gestion des erreurs</li>
+                        <li><i class="fas fa-check"></i> Bonnes pratiques de code</li>
+                        <li><i class="fas fa-check"></i> Optimisation de code</li>
+                    </ul>
+                </section>
+
+                <section class="project-features">
+                    <h2><i class="fas fa-star"></i> Points forts</h2>
+                    <ul>
+                        <li><i class="fas fa-code"></i> Code modulaire et réutilisable</li>
+                        <li><i class="fas fa-shield-alt"></i> Gestion robuste des erreurs</li>
+                        <li><i class="fas fa-book"></i> Documentation détaillée</li>
+                        <li><i class="fas fa-project-diagram"></i> Architecture claire</li>
+                    </ul>
+                </section>
+            </div>
+
+            <section class="project-examples">
+                <h2><i class="fas fa-laptop-code"></i> Exemples pratiques</h2>
+                <div class="examples-grid">
+                    <div class="example-item">
+                        <h3>Manipulation de données</h3>
+                        <pre><code class="language-python">
+# Exemple de traitement de liste
+nombres = [1, 2, 3, 4, 5]
+carres = [x**2 for x in nombres]
+somme = sum(carres)
+moyenne = somme / len(carres)</code></pre>
+                    </div>
+                    <div class="example-item">
+                        <h3>Gestion de fichiers</h3>
+                        <pre><code class="language-python">
+# Lecture et écriture de fichiers
+with open('data.txt', 'w') as f:
+    f.write('Hello Python!')
+    
+with open('data.txt', 'r') as f:
+    contenu = f.read()</code></pre>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ENDAYE Aimé – Portfolio Data Science</p>
+    </footer>
+</body>
+</html> 
