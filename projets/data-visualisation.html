@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualisation des Centrales Électriques Européennes | ENDAYE Aimé</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/projet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Menu principal">
+      <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+      <ul class="nav-links">
+        <li><a href="../index.html#projets">Projets</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main" class="project-page">
+    <article class="project-content">
+      <h1>Visualisation des Centrales Électriques Européennes</h1>
+
+      <section class="project-details">
+        <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+        <p>Projet d'analyse et de visualisation de données sur les centrales électriques européennes. Ce projet utilise plusieurs bibliothèques de visualisation Python pour créer des représentations interactives et informatives des données énergétiques à travers l'Europe.</p>
+        <ul>
+          <li><strong>Analyse complète</strong> : Exploration des données sur les centrales électriques</li>
+          <li><strong>Visualisations multiples</strong> : Utilisation de Matplotlib, Seaborn et Bokeh</li>
+          <li><strong>Interactivité</strong> : Création de graphiques interactifs</li>
+          <li><strong>Insights</strong> : Extraction de tendances et patterns</li>
+        </ul>
+
+        <div class="tech-stack">
+          <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+          <ul>
+            <li><strong>Python</strong> : Langage principal</li>
+            <li><strong>Pandas</strong> : Manipulation des données</li>
+            <li><strong>Matplotlib</strong> : Visualisations de base</li>
+            <li><strong>Seaborn</strong> : Visualisations statistiques</li>
+            <li><strong>Bokeh</strong> : Visualisations interactives</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="code-section-wrapper">
+        <section class="project-code">
+          <h2><i class="fas fa-code"></i> Extrait du code</h2>
+          <pre><code class="language-python">
+            import pandas as pd
+            import matplotlib.pyplot as plt
+            import seaborn as sns
+            import bokeh
+
+            # Lecture des données
+            df = pd.read_csv("powerplants-eu.csv")
+
+            # Configuration du style
+            plt.style.use('seaborn')
+            sns.set_palette("husl")
+
+            # Création de visualisations
+            def create_capacity_by_source():
+                plt.figure(figsize=(12, 6))
+                sns.barplot(
+                    data=df,
+                    x='energy_source',
+                    y='capacity',
+                    estimator=sum
+                )
+                plt.xticks(rotation=45)
+                plt.title('Capacité totale par source d\'énergie')
+                plt.tight_layout()
+                return plt
+          </code></pre>
+        </section>
+        <div class="github-link">
+          <a href="https://github.com/ENDAYEaime/Portfolio/tree/main/DATA%20visualisation" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i>
+            Voir le code complet sur GitHub
+          </a>
+          <p class="github-description">
+            Accédez au repository complet pour explorer :
+            <ul>
+              <li>Le notebook Jupyter complet</li>
+              <li>Les visualisations générées</li>
+              <li>Le jeu de données</li>
+              <li>La documentation</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <div class="flex-sections">
+        <section class="project-results">
+          <h2><i class="fas fa-chart-bar"></i> Fonctionnalités</h2>
+          <ul>
+            <li><i class="fas fa-chart-pie"></i> Visualisations statistiques</li>
+            <li><i class="fas fa-map-marked-alt"></i> Cartographie des centrales</li>
+            <li><i class="fas fa-chart-line"></i> Analyse des tendances</li>
+            <li><i class="fas fa-table"></i> Tableaux de bord interactifs</li>
+          </ul>
+        </section>
+
+        <section class="project-features">
+          <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+          <ul>
+            <li><i class="fas fa-paint-brush"></i> Styles personnalisés</li>
+            <li><i class="fas fa-mouse-pointer"></i> Interactivité Bokeh</li>
+            <li><i class="fas fa-filter"></i> Filtres dynamiques</li>
+            <li><i class="fas fa-code"></i> Code modulaire</li>
+          </ul>
+        </section>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 ENDAYE Aimé – Portfolio Data Science</p>
+  </footer>
+</body>
+</html> 

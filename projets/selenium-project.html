@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scraping de Canapés avec Selenium | ENDAYE Aimé</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/projet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Menu principal">
+      <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+      <ul class="nav-links">
+        <li><a href="../index.html#projets">Projets</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main" class="project-page">
+    <article class="project-content">
+      <h1>Scraping de Canapés avec Selenium</h1>
+
+      <section class="project-details">
+        <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+        <p>Projet d'automatisation de collecte de données sur des canapés Amazon utilisant Selenium. Ce script permet de récupérer automatiquement les informations détaillées des produits, notamment le titre, la couleur et l'URL de l'image, tout en gérant les doublons et en respectant les bonnes pratiques de scraping.</p>
+        <ul>
+          <li><strong>Automatisation complète</strong> : Navigation et extraction de données automatisées</li>
+          <li><strong>Gestion des doublons</strong> : Vérification et évitement des produits déjà collectés</li>
+          <li><strong>Robustesse</strong> : Gestion des erreurs et des timeouts</li>
+          <li><strong>Export structuré</strong> : Sauvegarde des données au format CSV</li>
+        </ul>
+
+        <div class="tech-stack">
+          <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+          <ul>
+            <li><strong>Selenium</strong> : Automatisation du navigateur</li>
+            <li><strong>Python</strong> : Langage principal</li>
+            <li><strong>CSV</strong> : Stockage des données</li>
+            <li><strong>WebDriver Manager</strong> : Gestion automatique des drivers</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="code-section-wrapper">
+        <section class="project-code">
+          <h2><i class="fas fa-code"></i> Extrait du code</h2>
+          <pre><code class="language-python">
+            def extract_couleur():
+                """Extrait la couleur du produit Amazon"""
+                couleurs_connues = [
+                    "noir", "blanc", "gris", "beige", "bleu", "vert",
+                    "rouge", "jaune", "marron", "rose", "violet"
+                ]
+                try:
+                    # Méthode principale
+                    couleur = driver.find_element(
+                        By.CSS_SELECTOR, 
+                        "#variation_color_name .selection"
+                    )
+                    if couleur.text.strip():
+                        return couleur.text.strip()
+                except:
+                    pass
+                # Méthodes alternatives...
+                return ""
+
+            def scrape_amazon_product(url):
+                """Scrape un produit Amazon"""
+                try:
+                    driver.get(url)
+                    WebDriverWait(driver, 10).until(
+                        EC.presence_of_element_located(
+                            (By.ID, "productTitle")
+                        )
+                    )
+                    time.sleep(2)
+
+                    product_data = {
+                        "Lien d'affiliation": url,
+                        "Titre de l'article": extract_product_title(),
+                        "Couleur": extract_couleur(),
+                        "Image URL": extract_main_image(),
+                    }
+                    return product_data
+                except Exception as e:
+                    print(f"Erreur lors du scraping de {url}: {str(e)}")
+                    return None
+          </code></pre>
+        </section>
+        <div class="github-link">
+          <a href="https://github.com/ENDAYEaime/Portfolio/tree/main/selenium" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i>
+            Voir le code complet sur GitHub
+          </a>
+          <p class="github-description">
+            Accédez au repository complet pour explorer :
+            <ul>
+              <li>Le script de scraping complet</li>
+              <li>Les données collectées</li>
+              <li>La documentation détaillée</li>
+              <li>Les fichiers de configuration</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <div class="flex-sections">
+        <section class="project-results">
+          <h2><i class="fas fa-chart-bar"></i> Fonctionnalités</h2>
+          <ul>
+            <li><i class="fas fa-search"></i> Extraction automatique des données</li>
+            <li><i class="fas fa-filter"></i> Détection intelligente des couleurs</li>
+            <li><i class="fas fa-file-csv"></i> Export au format CSV</li>
+            <li><i class="fas fa-sync"></i> Gestion des doublons</li>
+          </ul>
+        </section>
+
+        <section class="project-features">
+          <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+          <ul>
+            <li><i class="fas fa-shield-alt"></i> Mode headless pour performance</li>
+            <li><i class="fas fa-clock"></i> Gestion des timeouts</li>
+            <li><i class="fas fa-exclamation-triangle"></i> Gestion des erreurs</li>
+            <li><i class="fas fa-user-agent"></i> User-Agent personnalisé</li>
+          </ul>
+        </section>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 ENDAYE Aimé – Portfolio Data Science</p>
+  </footer>
+</body>
+</html> 

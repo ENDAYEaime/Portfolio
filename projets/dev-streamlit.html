@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Développement d'Applications avec Streamlit | ENDAYE Aimé</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+    <header>
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#projets">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="project-page">
+        <article class="project-content">
+            <h1>Développement d'Applications avec Streamlit</h1>
+
+            <section class="project-details">
+                <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+                <p>Projet d'apprentissage et de développement d'applications web interactives avec Streamlit. Ce projet couvre l'ensemble des fonctionnalités de Streamlit pour créer des applications de data science et de visualisation de données professionnelles.</p>
+                <ul>
+                    <li><strong>Interface interactive</strong> : Création d'applications web dynamiques</li>
+                    <li><strong>Widgets avancés</strong> : Boutons, sliders, sélecteurs et plus</li>
+                    <li><strong>Visualisation de données</strong> : Intégration de graphiques et tableaux</li>
+                    <li><strong>Manipulation de données</strong> : Gestion efficace des DataFrames</li>
+                </ul>
+
+                <div class="tech-stack">
+                    <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+                    <ul>
+                        <li><strong>Streamlit</strong> : Framework principal</li>
+                        <li><strong>Python</strong> : Langage de programmation</li>
+                        <li><strong>Pandas</strong> : Manipulation des données</li>
+                        <li><strong>Matplotlib</strong> : Visualisations de base</li>
+                        <li><strong>Plotly</strong> : Visualisations interactives</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="code-section-wrapper">
+                <section class="project-code">
+                    <h2><i class="fas fa-code"></i> Extrait du code</h2>
+                    <pre><code class="language-python">
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import plotly.express as px
+
+# Configuration de la page
+st.set_page_config(page_title="Mon Application Streamlit")
+
+# Création d'une sidebar
+st.sidebar.title("Navigation")
+option = st.sidebar.radio(
+    "Choisissez une page:",
+    ('Accueil', 'Exploration de données', 'Visualisation', 'À propos')
+)
+
+# Affichage conditionnel selon la sélection
+if option == 'Accueil':
+    st.header('Bienvenue sur la page d\'Accueil!')
+    st.write('Choisissez une option dans la sidebar pour commencer.')
+elif option == 'Exploration de données':
+    st.header('Explorez vos données ici')
+    # Widgets pour l'exploration de données
+    uploaded_file = st.file_uploader("Téléchargez un fichier CSV", type="csv")
+    if uploaded_file is not None:
+        df = pd.read_csv(uploaded_file)
+        st.dataframe(df)
+                    </code></pre>
+                </section>
+                <div class="github-link">
+                    <a href="https://github.com/ENDAYEaime/Portfolio/tree/main/dev_streamlit.ipynb" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i>
+                        Voir le code complet sur GitHub
+                    </a>
+                    <p class="github-description">
+                        Accédez au repository complet pour explorer :
+                        <ul>
+                            <li>Le notebook Jupyter complet</li>
+                            <li>Les exemples de code</li>
+                            <li>La documentation</li>
+                            <li>Les applications Streamlit</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex-sections">
+                <section class="project-results">
+                    <h2><i class="fas fa-chart-bar"></i> Fonctionnalités</h2>
+                    <ul>
+                        <li><i class="fas fa-window-maximize"></i> Interface utilisateur interactive</li>
+                        <li><i class="fas fa-sliders-h"></i> Widgets personnalisables</li>
+                        <li><i class="fas fa-chart-line"></i> Visualisations dynamiques</li>
+                        <li><i class="fas fa-table"></i> Manipulation de données en temps réel</li>
+                    </ul>
+                </section>
+
+                <section class="project-features">
+                    <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+                    <ul>
+                        <li><i class="fas fa-code-branch"></i> Architecture modulaire</li>
+                        <li><i class="fas fa-sync"></i> Mise à jour en temps réel</li>
+                        <li><i class="fas fa-mobile-alt"></i> Design responsive</li>
+                        <li><i class="fas fa-shield-alt"></i> Gestion des erreurs</li>
+                    </ul>
+                </section>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ENDAYE Aimé – Portfolio Data Science</p>
+    </footer>
+</body>
+</html> 
