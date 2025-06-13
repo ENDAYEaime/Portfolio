@@ -1,0 +1,151 @@
+/* Variables de couleurs */
+:root {
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Effet sur les boutons */
+.stButton > button {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.stButton > button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+/* Effet sur les métriques */
+.stMetric {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.stMetric:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+/* Effet sur les expanders */
+.streamlit-expanderHeader {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.streamlit-expanderHeader:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+/* Effet sur les titres */
+h1, h2, h3, h4, h5, h6 {
+    transition: all 0.3s ease;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    transform: scale(1.05);
+}
+
+/* Effet sur les tableaux */
+.stDataFrame {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.stDataFrame:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+/* Effet sur les images */
+img {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+/* Effet sur les messages */
+.stAlert {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.stAlert:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+/* Effet sur les sections Guide d'utilisation et filtres */
+.stMarkdown {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.stMarkdown:hover {
+    transform: scale(1.03) translateZ(20px) rotateY(5deg);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+/* Effet sur les conteneurs de filtres */
+[data-testid="stForm"] {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow);
+    padding: 1rem;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+[data-testid="stForm"]:hover {
+    transform: scale(1.03) translateZ(20px) rotateY(5deg);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+/* Effet sur les filtres et sélecteurs */
+.stSelectbox, .stMultiselect, .stSlider, .stDateInput, .stNumberInput {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.stSelectbox:hover, .stMultiselect:hover, .stSlider:hover, .stDateInput:hover, .stNumberInput:hover {
+    transform: scale(1.05) translateZ(25px) rotateY(8deg);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+/* Effet sur les graphiques Plotly */
+.stPlotlyChart {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.stPlotlyChart:hover {
+    transform: scale(1.03) translateZ(20px) rotateY(5deg);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+/* Désactivons expressément l'effet 3D uniquement sur les cartes */
+.folium-map {
+    transform: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+}

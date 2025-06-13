@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analyse de Films TMDb avec Streamlit | ENDAYE Aimé</title>
+  <title>Dashboard Évolutif - Capacité Crânienne Humaine | ENDAYE Aimé</title>
   <link rel="stylesheet" href="../styles/main.css">
   <link rel="stylesheet" href="../styles/projet.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -22,26 +22,25 @@
 
   <main role="main" class="project-page">
     <article class="project-content">
-      <h1>Analyse de Films TMDb avec Streamlit</h1>
+      <h1>Dashboard Évolutif - Capacité Crânienne Humaine</h1>
 
       <section class="project-details">
         <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
-        <p>Application web interactive développée avec Streamlit pour analyser et visualiser des données de films issues de la base de données TMDb (The Movie Database). Ce projet démontre l'utilisation de Streamlit pour créer des visualisations interactives et des tableaux de bord dynamiques.</p>
+        <p>Application Streamlit interactive et modulaire pour explorer l'évolution de la capacité crânienne humaine à travers le temps, l'espace et les facteurs morphologiques. Le dashboard propose :</p>
         <ul>
-          <li><strong>Interface interactive</strong> : Tableau de bord dynamique avec filtres personnalisables</li>
-          <li><strong>Visualisations</strong> : Graphiques interactifs avec Plotly et Seaborn</li>
-          <li><strong>Analyse de données</strong> : Exploration approfondie des films et acteurs</li>
-          <li><strong>Performance</strong> : Optimisation du chargement des données avec cache</li>
+          <li><strong>Analyse statistique</strong> : Statistiques descriptives, catégorielles et exploration du dataset</li>
+          <li><strong>Visualisations avancées</strong> : Histogrammes, boxplots, corrélations, évolution temporelle, analyse multivariée</li>
+          <li><strong>Carte interactive</strong> : Répartition mondiale des observations par pays (Folium)</li>
+          <li><strong>Synthèse & recommandations</strong> : Résultats clés, conclusions, axes de recherche futurs</li>
         </ul>
-
         <div class="tech-stack">
           <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
           <ul>
-            <li><strong>Streamlit</strong> : Framework pour l'interface utilisateur</li>
-            <li><strong>Python</strong> : Langage principal</li>
-            <li><strong>Pandas</strong> : Manipulation des données</li>
-            <li><strong>Plotly & Seaborn</strong> : Visualisations interactives</li>
-            <li><strong>Matplotlib</strong> : Visualisations statiques</li>
+            <li><strong>Streamlit</strong> : Interface web interactive</li>
+            <li><strong>Python</strong> : Traitement et analyse</li>
+            <li><strong>Pandas</strong> : Manipulation de données</li>
+            <li><strong>Plotly, Seaborn, Matplotlib</strong> : Visualisations</li>
+            <li><strong>Folium</strong> : Cartographie interactive</li>
           </ul>
         </div>
       </section>
@@ -50,43 +49,41 @@
         <section class="project-code">
           <h2><i class="fas fa-code"></i> Extrait du code</h2>
           <pre><code class="language-python">
-            import streamlit as st
-            import pandas as pd
-            import plotly.express as px
+import streamlit as st
+import pandas as pd
+import plotly.express as px
 
-            # Configuration de la page
-            st.set_page_config(
-                page_title="Analyse de Films TMDb",
-                layout="wide"
-            )
+st.set_page_config(page_title="Dashboard - Accueil", layout="wide")
 
-            # Fonction pour charger les données
-            @st.cache_data
-            def load_data():
-                movies_df = pd.read_csv('data/TMDb_Dataset.csv')
-                actors_df = pd.read_csv('data/Birth_Actors.csv')
-                return movies_df, actors_df
+df = pd.read_csv('Evolution_DataSets_clean.csv')
+st.title("Évolution de la Capacité Crânienne chez l'Homme")
 
-            # Interface utilisateur
-            st.title("Analyse de Films TMDb")
-            
-            # Onglets pour différentes visualisations
-            tabs = ["Analyses Générales", "Acteurs", "Films"]
-            tab1, tab2, tab3 = st.tabs(tabs)
+# Statistiques clés
+col1, col2, col3 = st.columns(3)
+col1.metric("Spécimens", f"{len(df):,}")
+col2.metric("Pays analysés", df['Current_Country'].nunique())
+col3.metric("Capacité moyenne", f"{df['Cranial_Capacity_(cm³)'].mean():.0f} cm³")
+
+# Visualisation temporelle
+fig = px.scatter(df, x='Time_MYA', y='Cranial_Capacity_(cm³)',
+                 title="Évolution de la Capacité Crânienne au Fil du Temps",
+                 labels={'Time_MYA': "Temps (Millions d'années)", 'Cranial_Capacity_(cm³)': "Capacité Crânienne (cm³)"},
+                 trendline="ols")
+fig.update_layout(xaxis=dict(autorange='reversed'))
+st.plotly_chart(fig, use_container_width=True)
           </code></pre>
         </section>
         <div class="github-link">
-          <a href="https://github.com/ENDAYEaime/Portfolio/tree/main/streamlit_projet" target="_blank" class="btn-github">
+          <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
             <i class="fab fa-github"></i>
             Voir le code complet sur GitHub
           </a>
           <p class="github-description">
-            Accédez au repository complet pour explorer :
+            Accédez au repository complet pour explorer :
             <ul>
               <li>L'application Streamlit complète</li>
-              <li>Les scripts de traitement des données</li>
-              <li>La documentation détaillée</li>
-              <li>Les fichiers de configuration</li>
+              <li>Les visualisations avancées et la carte interactive</li>
+              <li>La synthèse des résultats et recommandations</li>
             </ul>
           </p>
         </div>
@@ -94,22 +91,23 @@
 
       <div class="flex-sections">
         <section class="project-results">
-          <h2><i class="fas fa-chart-bar"></i> Fonctionnalités</h2>
+          <h2><i class="fas fa-chart-bar"></i> Résultats du projet</h2>
           <ul>
-            <li><i class="fas fa-film"></i> Analyse de plus de 45,000 films</li>
-            <li><i class="fas fa-user"></i> Profils détaillés des acteurs</li>
-            <li><i class="fas fa-chart-line"></i> Visualisations interactives</li>
-            <li><i class="fas fa-filter"></i> Filtres personnalisables</li>
+            <li><i class="fas fa-database"></i> 12 000+ spécimens analysés</li>
+            <li><i class="fas fa-map-marked-alt"></i> 8 pays étudiés</li>
+            <li><i class="fas fa-brain"></i> Capacité crânienne moyenne : 1350 cm³</li>
+            <li><i class="fas fa-chart-line"></i> Visualisations avancées et synthèse évolutive</li>
           </ul>
         </section>
 
         <section class="project-features">
-          <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+          <h2><i class="fas fa-cogs"></i> Fonctionnalités</h2>
           <ul>
-            <li><i class="fas fa-tachometer-alt"></i> Chargement optimisé des données</li>
-            <li><i class="fas fa-mobile-alt"></i> Interface responsive</li>
-            <li><i class="fas fa-code-branch"></i> Architecture modulaire</li>
-            <li><i class="fas fa-sync"></i> Mise à jour en temps réel</li>
+            <li><i class="fas fa-filter"></i> Filtres dynamiques sur toutes les pages</li>
+            <li><i class="fas fa-chart-bar"></i> Statistiques descriptives et catégorielles</li>
+            <li><i class="fas fa-project-diagram"></i> Analyse multivariée et temporelle</li>
+            <li><i class="fas fa-globe"></i> Carte interactive mondiale</li>
+            <li><i class="fas fa-lightbulb"></i> Synthèse, conclusions et recommandations</li>
           </ul>
         </section>
       </div>
