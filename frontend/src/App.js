@@ -903,7 +903,7 @@ function Hero() {
             <span className="w-2 h-2 bg-green-400 rounded-full pulse-dot" />
             <span className="text-sm text-blue-300 font-mono">Disponible pour opportunités</span>
           </motion.div>
-          <motion.p variants={fadeUp} className="text-blue-400 font-mono text-sm md:text-base tracking-widest uppercase mb-4">Data Scientist & Analyst</motion.p>
+          <motion.p variants={fadeUp} className="text-blue-400 font-mono text-sm md:text-base tracking-widest uppercase mb-4">Data Science & Intelligence Artificielle</motion.p>
           <motion.h1 variants={fadeUp} className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
             <span className="text-white">ENDAYE</span> <span className="gradient-text glow-text">Aimé</span>
           </motion.h1>
