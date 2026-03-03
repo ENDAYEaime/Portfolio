@@ -693,6 +693,19 @@ function Skills() {
 
 // Project Detail Modal
 function ProjectModal({ project, onClose }) {
+  // Handle Escape key to close modal
+  React.useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleEscape);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [onClose]);
+
   if (!project) return null;
   const Icon = project.icon;
 

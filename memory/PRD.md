@@ -1,7 +1,7 @@
 # Portfolio Data Science - ENDAYE Aimé
 
 ## Date: 03 Mars 2026
-## Dernière mise à jour: 03 Mars 2026 - Design v2 Dark Theme
+## Dernière mise à jour: 03 Mars 2026 - Design v3 Dark Blue Theme avec modals détaillés
 
 ## Problème Original
 Créer un portfolio simple et basique pour un professionnel de la data science avec les projets contenus dans le dépôt GitHub.
@@ -16,9 +16,9 @@ Créer un portfolio simple et basique pour un professionnel de la data science a
 ## Architecture
 - **Frontend**: React 18 + Tailwind CSS + Framer Motion
 - **Backend**: FastAPI (minimal, pour API health)
-- **Design**: Dark Data Theme avec bleu foncé (#0a0f1a) et accents bleus (#3b82f6)
+- **Design**: Dark Blue Theme authentique (#0a1628) avec accents bleus (#3b82f6, #2563eb)
 - **Fonts**: Outfit (headings), Inter (body), JetBrains Mono (code)
-- **Effets**: Particules animées, grille data, glassmorphism, glow effects
+- **Effets**: Grille data, glassmorphism, glow effects, modal détaillé
 
 ## User Personas
 1. **Recruteurs Tech** - Cherchent des profils data avec compétences démontrées
@@ -36,22 +36,27 @@ Créer un portfolio simple et basique pour un professionnel de la data science a
 
 ## Ce qui a été implémenté
 
-### Frontend (03/03/2026) - V2 Dark Theme
+### Frontend (03/03/2026) - V3 Dark Blue avec Modals
 - Application React single-page avec 5 sections
-- **Thème bleu foncé** orienté data avec:
+- **Thème bleu foncé authentique** (#0a1628) avec:
   - Grille data en background
-  - Particules animées flottantes
-  - Effets de glow sur les titres
+  - Effets de glow bleu
   - Glassmorphism sur les cards
-- Navigation sticky avec blur au scroll et underline hover
-- Hero section avec:
-  - Badge "Disponible pour opportunités" avec dot animé
-  - Nom avec gradient text effect
-  - Statistiques avec icônes
+- Navigation sticky avec blur au scroll
+- Hero section avec badge "Disponible", gradient text, statistiques
 - Section À propos avec bio et formations
-- Section Compétences avec 6 catégories et **icônes colorées par gradient**
-- Section Projets avec 8 projets, images, icônes et filtres par catégorie
-- Section Contact avec style glassmorphism
+- Section Compétences avec 6 catégories et icônes colorées
+- **Section Projets améliorée** avec 8 projets contenant:
+  - Nom et sous-titre
+  - Image thématique adaptée au projet
+  - Technologies utilisées
+  - Modal détaillé au clic avec:
+    - Description complète
+    - Liste des fonctionnalités et points techniques
+    - Extrait de code Python/SQL
+    - Bouton lien vers GitHub
+    - Fermeture Escape + clic extérieur
+- Section Contact avec glassmorphism
 - Footer avec copyright
 - Animations Framer Motion fluides
 - Responsive mobile avec menu hamburger
