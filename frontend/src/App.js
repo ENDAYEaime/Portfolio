@@ -830,7 +830,7 @@ const skills = [
 ];
 
 const contacts = [
-  { name: "GitHub", url: "https://github.com/ENDAYEaime/Portfolio", icon: Github },
+  { name: "GitHub", url: "https://github.com/ENDAYEaime", icon: Github },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/aime-endaye-2a57b0150", icon: Linkedin },
   { name: "Email", url: "mailto:endayeaime@gmail.com", icon: Mail },
   { name: "Téléphone", url: "tel:0769107434", icon: Phone }
