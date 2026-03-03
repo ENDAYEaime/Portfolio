@@ -953,6 +953,18 @@ function About() {
     { name: "Biologie, Niveau Licence 3", school: "UFR de Reims", period: "09/2019 - 06/2022", current: false }
   ];
 
+  const competencesProjet = [
+    "Modélisation de bases de données (schémas en étoile, logique décisionnelle)",
+    "SQL avancé et optimisation de requêtes",
+    "Python pour le traitement de données (Pandas, Polars)",
+    "Mise en place de pipelines ETL",
+    "Réplication et sharding avec MongoDB",
+    "Conteneurisation avec Docker",
+    "Intégration de données via Airbyte",
+    "Machine Learning (régression, feature engineering, tuning)",
+    "Applications analytiques avec Streamlit"
+  ];
+
   return (
     <section id="about" data-testid="about-section" className="py-24 md:py-32 bg-[#0d1b2a] relative">
       <div className="absolute inset-0 data-grid-bg opacity-50" />
@@ -965,20 +977,50 @@ function About() {
           <motion.h2 variants={fadeUp} className="font-heading text-4xl md:text-5xl font-semibold text-white tracking-tight mb-12">
             Mon parcours <span className="gradient-text">Data</span>
           </motion.h2>
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <motion.div variants={fadeUp} className="space-y-6">
+          
+          <div className="grid lg:grid-cols-5 gap-12 items-start">
+            {/* Main Bio - Takes 3 columns */}
+            <motion.div variants={fadeUp} className="lg:col-span-3 space-y-6">
               <p className="text-lg text-slate-300 leading-relaxed">
-                Je suis <strong className="text-blue-400">Endayé Aimé</strong>, passionné par la Data Science et l'Intelligence Artificielle. Après un parcours initial en Biologie à l'UFR de Reims, j'ai opéré une reconversion réussie vers le monde de la data.
+                Je m'appelle <strong className="text-blue-400">Endaye Aimé</strong>, passionné par la data et par la manière dont elle permet de structurer, analyser et optimiser des systèmes complexes.
               </p>
               <p className="text-lg text-slate-300 leading-relaxed">
-                Ma formation s'est construite progressivement : de <strong className="text-blue-400">Dataquest</strong> pour les fondamentaux Python, à la <strong className="text-blue-400">Licence Data Analyst</strong> chez DSR School, jusqu'au <strong className="text-blue-400">Master Data Engineering</strong> chez OpenClassrooms.
+                Mon parcours a commencé dans les <strong className="text-blue-400">sciences du vivant</strong>, où j'ai développé une approche rigoureuse, analytique et méthodologique de la résolution de problèmes. Progressivement, j'ai orienté cette rigueur scientifique vers la donnée, en débutant par la data analyse à travers plusieurs projets concrets : exploration, nettoyage, visualisation, analyses statistiques et problématiques décisionnelles.
               </p>
               <p className="text-lg text-slate-300 leading-relaxed">
-                Je poursuis actuellement un <strong className="text-blue-400">Master Architecte IA</strong> chez JEDHA pour devenir expert en conception de systèmes d'intelligence artificielle. J'ai réalisé <strong className="text-blue-400">24 projets</strong> couvrant le ML, le Data Engineering et la visualisation.
+                Avec le temps, mon intérêt s'est déplacé vers les fondations techniques des systèmes data. Je me spécialise aujourd'hui en <strong className="text-blue-400">Data Engineering</strong>, avec une approche orientée architecture, performance et scalabilité.
               </p>
+              <p className="text-lg text-slate-300 leading-relaxed">
+                Aujourd'hui, mon objectif est d'évoluer vers des rôles d'<strong className="text-blue-400">ingénieur data</strong> et <strong className="text-blue-400">architecte IA</strong>, en concevant des architectures robustes capables d'alimenter des systèmes d'intelligence artificielle à grande échelle.
+              </p>
+              
+              {/* Competences from projects */}
+              <div className="mt-8 p-6 bg-[#0a1628] border border-blue-500/20 rounded-xl">
+                <h4 className="font-heading text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                  <Cpu className="w-5 h-5 text-blue-400" />
+                  Ce sur quoi j'ai travaillé
+                </h4>
+                <div className="grid sm:grid-cols-2 gap-2">
+                  {competencesProjet.map((comp, i) => (
+                    <div key={i} className="flex items-start gap-2 text-sm text-slate-400">
+                      <ChevronRight className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                      <span>{comp}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Philosophy */}
+              <div className="p-6 bg-gradient-to-r from-blue-600/10 to-transparent border-l-4 border-blue-500 rounded-r-xl">
+                <p className="text-blue-300 italic">
+                  "Chaque projet que je réalise s'inscrit dans une logique claire : concevoir des solutions data complètes, performantes et prêtes pour la production."
+                </p>
+              </div>
             </motion.div>
-            <motion.div variants={fadeUp}>
-              <div className="bg-[#0a1628] border border-blue-500/30 rounded-xl p-6">
+
+            {/* Formation - Takes 2 columns */}
+            <motion.div variants={fadeUp} className="lg:col-span-2">
+              <div className="bg-[#0a1628] border border-blue-500/30 rounded-xl p-6 sticky top-24">
                 <h3 className="font-heading text-xl font-semibold text-white mb-6 flex items-center gap-3">
                   <GraduationCap className="w-5 h-5 text-blue-400" />
                   Formation
@@ -987,13 +1029,13 @@ function About() {
                   {formations.map((item, i) => (
                     <li key={i} className="flex items-start gap-4 pb-4 border-b border-blue-500/10 last:border-0 last:pb-0">
                       <div className={`w-3 h-3 rounded-full mt-1.5 flex-shrink-0 ${item.current ? 'bg-green-400 pulse-dot' : 'bg-blue-500'}`} />
-                      <div className="flex-1">
-                        <div className="font-medium text-white">{item.name}</div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-medium text-white text-sm">{item.name}</div>
                         <div className="text-sm text-blue-400">{item.school}</div>
                         <div className="text-xs text-slate-500 font-mono mt-1">{item.period}</div>
                       </div>
                       {item.current && (
-                        <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full">En cours</span>
+                        <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full whitespace-nowrap">En cours</span>
                       )}
                     </li>
                   ))}
