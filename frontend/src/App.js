@@ -63,7 +63,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800",
     category: "Machine Learning",
     icon: Brain,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Prédiction de consommation énergétique (kBtu)",
       "Feature engineering avancé",
@@ -91,7 +91,7 @@ print(f"R² Score: {scores.mean():.3f}")`
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800",
     category: "Business Analytics",
     icon: TrendingUp,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Analyse de 45 211 observations",
       "Profilage clients souscripteurs vs non-souscripteurs",
@@ -120,7 +120,7 @@ plt.title('Taux de souscription par éducation')`
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800",
     category: "Data Engineering",
     icon: Building,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Schéma relationnel normalisé",
       "Jointures multi-tables complexes",
@@ -150,7 +150,7 @@ ORDER BY prix_m2 DESC;`
     image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800",
     category: "Data Analysis",
     icon: Activity,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Analyse de 5 ligues majeures",
       "Mesure de consistance par variance",
@@ -182,7 +182,7 @@ ORDER BY goal_variance ASC;`
     image: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800",
     category: "Data Engineering",
     icon: Music,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Authentification Client Credentials",
       "Gestion pagination API (limit/offset)",
@@ -219,7 +219,7 @@ def get_artist_tracks(artist_id, token):
     image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800",
     category: "Data Visualization",
     icon: PieChart,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "5 pages thématiques",
       "Carte interactive Folium",
@@ -252,7 +252,7 @@ st.plotly_chart(fig, use_container_width=True)`
     image: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=800",
     category: "Data Engineering",
     icon: Terminal,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Navigation automatisée",
       "Extraction titre, prix, image",
@@ -284,7 +284,7 @@ price = driver.find_element(
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800",
     category: "Data Engineering",
     icon: HeartPulse,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Modélisation document NoSQL",
       "Migration données relationnelles",
@@ -314,7 +314,7 @@ print(f"Inserted {len(result.inserted_ids)} docs")`
     image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=800",
     category: "Data Engineering",
     icon: Layers,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Audit architecture existante",
       "Analyse cubes OLAP",
@@ -344,7 +344,7 @@ GROUP BY CUBE(c.annee, p.categorie);`
     image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800",
     category: "Data Visualization",
     icon: Film,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Filtrage par année et genre",
       "Distribution des notes",
@@ -377,7 +377,7 @@ st.plotly_chart(fig)`
     image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800",
     category: "Data Visualization",
     icon: Zap,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Analyse capacités installées",
       "Répartition par type d'énergie",
@@ -407,7 +407,7 @@ plt.ylabel('Capacité (MW)')`
     image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800",
     category: "Data Analysis",
     icon: MessageSquare,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Analyse Ask HN vs Show HN",
       "Identification pics d'engagement",
@@ -438,7 +438,7 @@ for post in ask_posts:
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800",
     category: "Data Analysis",
     icon: Smartphone,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Analyse 10 000+ applications",
       "Nettoyage données doublons",
@@ -471,7 +471,7 @@ ios_genres = freq_table(ios_data, 11)`
     image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
     category: "Data Analysis",
     icon: Database,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Requêtes SQL avancées",
       "Analyse clients et locations",
@@ -501,7 +501,7 @@ LIMIT 10;`
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
     category: "Data Analysis",
     icon: GraduationCap,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Analyse indicateurs éducatifs",
       "Comparaison internationale",
@@ -531,7 +531,7 @@ print(enrollment.head(10))`
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
     category: "Data Engineering",
     icon: Server,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Architecture distribuée",
       "Sharding et réplication",
@@ -563,7 +563,7 @@ admin.command('shardCollection',
     image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800",
     category: "Data Science",
     icon: Leaf,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Méthodologie SCRUM",
       "Cadrage projet data",
@@ -594,7 +594,7 @@ velocity = sprint_points['completed'] / sprint_points['planned']`
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
     category: "Data Visualization",
     icon: Globe,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Widgets interactifs",
       "Layout responsive",
@@ -629,7 +629,7 @@ with col2:
     image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=800",
     category: "Data Analysis",
     icon: Activity,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Analyse exploratoire complète",
       "Visualisations temporelles",
@@ -661,7 +661,7 @@ plt.title('Top 10 pays - Cas confirmés')`
     image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800",
     category: "Data Science",
     icon: FlaskConical,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Nettoyage données paléo",
       "Analyse statistique descriptive",
@@ -692,7 +692,7 @@ plt.title('Matrice de corrélation')`
     image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800",
     category: "Fundamentals",
     icon: Calculator,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Création et manipulation arrays",
       "Opérations vectorisées",
@@ -723,7 +723,7 @@ normalized = (arr - arr.mean()) / arr.std()`
     image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800",
     category: "Fundamentals",
     icon: Table,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Lecture fichiers CSV",
       "Exploration DataFrame",
@@ -757,7 +757,7 @@ summary = df.groupby('category').agg({
     image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800",
     category: "Fundamentals",
     icon: Code,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Programmation orientée objet",
       "Structures de données",
@@ -793,7 +793,7 @@ class DataAnalyzer:
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800",
     category: "Fundamentals",
     icon: BookOpen,
-    github: "https://github.com/ENDAYEaime/Portfolio",
+    github: "https://github.com/ENDAYEaime/portfolio_EA",
     features: [
       "Installation et configuration",
       "Raccourcis clavier essentiels",
