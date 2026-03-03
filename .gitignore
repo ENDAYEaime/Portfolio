@@ -12,3 +12,7 @@ Thumbs.db
 # Python
 __pycache__/
 .ipynb_checkpoints/
+-e 
+# Environment files
+*.env
+*.env.*
