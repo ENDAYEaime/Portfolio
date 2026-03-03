@@ -945,6 +945,14 @@ function Hero() {
 
 // About Section
 function About() {
+  const formations = [
+    { name: "Master Architecte IA", school: "JEDHA", period: "09/2026 - 09/2028", current: true },
+    { name: "Master Data Engineering", school: "OpenClassrooms", period: "09/2025 - 08/2026", current: true },
+    { name: "Licence Data Analyst", school: "DSR School", period: "01/2025 - 07/2025", current: false },
+    { name: "Formation Data", school: "Dataquest", period: "03/2024 - 11/2024", current: false },
+    { name: "Biologie, Niveau Licence 3", school: "UFR de Reims", period: "09/2019 - 06/2022", current: false }
+  ];
+
   return (
     <section id="about" data-testid="about-section" className="py-24 md:py-32 bg-[#0d1b2a] relative">
       <div className="absolute inset-0 data-grid-bg opacity-50" />
@@ -960,33 +968,33 @@ function About() {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <motion.div variants={fadeUp} className="space-y-6">
               <p className="text-lg text-slate-300 leading-relaxed">
-                Je suis <strong className="text-blue-400">Endayé Aimé</strong>, passionné par l'informatique et la Data Science. Mon parcours a été rythmé par des heures d'apprentissage sur Dataquest, où j'ai bâti mes premières compétences en Python, en statistiques et en web scraping.
+                Je suis <strong className="text-blue-400">Endayé Aimé</strong>, passionné par la Data Science et l'Intelligence Artificielle. Après un parcours initial en Biologie à l'UFR de Reims, j'ai opéré une reconversion réussie vers le monde de la data.
               </p>
               <p className="text-lg text-slate-300 leading-relaxed">
-                J'ai réalisé <strong className="text-blue-400">24 projets</strong> couvrant le Machine Learning, le Data Engineering, la visualisation de données, l'analyse business et plus encore.
+                Ma formation s'est construite progressivement : de <strong className="text-blue-400">Dataquest</strong> pour les fondamentaux Python, à la <strong className="text-blue-400">Licence Data Analyst</strong> chez DSR School, jusqu'au <strong className="text-blue-400">Master Data Engineering</strong> chez OpenClassrooms.
               </p>
               <p className="text-lg text-slate-300 leading-relaxed">
-                Aujourd'hui, je peaufine mon expertise au sein de <strong className="text-blue-400">DSR School</strong>, où je me forme de manière intensive aux méthodes et outils professionnels.
+                Je poursuis actuellement un <strong className="text-blue-400">Master Architecte IA</strong> chez JEDHA pour devenir expert en conception de systèmes d'intelligence artificielle. J'ai réalisé <strong className="text-blue-400">24 projets</strong> couvrant le ML, le Data Engineering et la visualisation.
               </p>
             </motion.div>
             <motion.div variants={fadeUp}>
-              <div className="bg-[#0a1628] border border-blue-500/30 rounded-xl p-8">
+              <div className="bg-[#0a1628] border border-blue-500/30 rounded-xl p-6">
                 <h3 className="font-heading text-xl font-semibold text-white mb-6 flex items-center gap-3">
-                  <Activity className="w-5 h-5 text-blue-400" />
-                  Formations & Certifications
+                  <GraduationCap className="w-5 h-5 text-blue-400" />
+                  Formation
                 </h3>
-                <ul className="space-y-5">
-                  {[
-                    { name: "DSR School", desc: "Formation Data Science intensive", active: true },
-                    { name: "Dataquest", desc: "Python, Statistics, Web Scraping" },
-                    { name: "Udemy", desc: "Data Science, Visualisation avancée" }
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-4">
-                      <div className={`w-3 h-3 rounded-full mt-1.5 ${item.active ? 'bg-green-400 pulse-dot' : 'bg-blue-500'}`} />
-                      <div>
+                <ul className="space-y-4">
+                  {formations.map((item, i) => (
+                    <li key={i} className="flex items-start gap-4 pb-4 border-b border-blue-500/10 last:border-0 last:pb-0">
+                      <div className={`w-3 h-3 rounded-full mt-1.5 flex-shrink-0 ${item.current ? 'bg-green-400 pulse-dot' : 'bg-blue-500'}`} />
+                      <div className="flex-1">
                         <div className="font-medium text-white">{item.name}</div>
-                        <div className="text-sm text-slate-500">{item.desc}</div>
+                        <div className="text-sm text-blue-400">{item.school}</div>
+                        <div className="text-xs text-slate-500 font-mono mt-1">{item.period}</div>
                       </div>
+                      {item.current && (
+                        <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full">En cours</span>
+                      )}
                     </li>
                   ))}
                 </ul>
