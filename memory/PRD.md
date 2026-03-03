@@ -1,6 +1,7 @@
 # Portfolio Data Science - ENDAYE Aimé
 
 ## Date: 03 Mars 2026
+## Dernière mise à jour: 03 Mars 2026 - Design v2 Dark Theme
 
 ## Problème Original
 Créer un portfolio simple et basique pour un professionnel de la data science avec les projets contenus dans le dépôt GitHub.
@@ -13,10 +14,11 @@ Créer un portfolio simple et basique pour un professionnel de la data science a
 - Mode clair préféré
 
 ## Architecture
-- **Frontend**: React 18 + Tailwind CSS
+- **Frontend**: React 18 + Tailwind CSS + Framer Motion
 - **Backend**: FastAPI (minimal, pour API health)
-- **Design**: Swiss Minimalist avec International Klein Blue (#002FA7)
+- **Design**: Dark Data Theme avec bleu foncé (#0a0f1a) et accents bleus (#3b82f6)
 - **Fonts**: Outfit (headings), Inter (body), JetBrains Mono (code)
+- **Effets**: Particules animées, grille data, glassmorphism, glow effects
 
 ## User Personas
 1. **Recruteurs Tech** - Cherchent des profils data avec compétences démontrées
@@ -34,17 +36,24 @@ Créer un portfolio simple et basique pour un professionnel de la data science a
 
 ## Ce qui a été implémenté
 
-### Frontend (03/03/2026)
+### Frontend (03/03/2026) - V2 Dark Theme
 - Application React single-page avec 5 sections
-- Navigation sticky avec effet blur au scroll
-- Hero section avec statistiques (20+ projets, 5+ technologies, 2+ années XP)
-- Section À propos avec bio complète et formations
-- Section Compétences avec 6 catégories et tags techniques
-- Section Projets avec 8 projets data et système de filtrage par catégorie
-- Section Contact avec 4 liens (GitHub, LinkedIn, Email, Téléphone)
+- **Thème bleu foncé** orienté data avec:
+  - Grille data en background
+  - Particules animées flottantes
+  - Effets de glow sur les titres
+  - Glassmorphism sur les cards
+- Navigation sticky avec blur au scroll et underline hover
+- Hero section avec:
+  - Badge "Disponible pour opportunités" avec dot animé
+  - Nom avec gradient text effect
+  - Statistiques avec icônes
+- Section À propos avec bio et formations
+- Section Compétences avec 6 catégories et **icônes colorées par gradient**
+- Section Projets avec 8 projets, images, icônes et filtres par catégorie
+- Section Contact avec style glassmorphism
 - Footer avec copyright
-- Animations Framer Motion
-- Design Swiss Minimalist
+- Animations Framer Motion fluides
 - Responsive mobile avec menu hamburger
 
 ### Backend (03/03/2026)
