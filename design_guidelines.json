@@ -1,0 +1,190 @@
+{
+  "design_system": {
+    "typography": {
+      "font_family": {
+        "heading": "Outfit, sans-serif",
+        "body": "Inter, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "h1": "text-5xl md:text-7xl font-bold tracking-tight",
+        "h2": "text-4xl md:text-5xl font-semibold tracking-tight",
+        "h3": "text-2xl md:text-3xl font-medium",
+        "body": "text-base md:text-lg leading-relaxed text-slate-600 dark:text-slate-300",
+        "caption": "text-sm text-slate-500 uppercase tracking-widest"
+      }
+    },
+    "colors": {
+      "palette": {
+        "primary": {
+          "DEFAULT": "#002FA7",
+          "hover": "#001F70",
+          "foreground": "#FFFFFF"
+        },
+        "background": {
+          "light": "#FFFFFF",
+          "dark": "#0A0A0A"
+        },
+        "surface": {
+          "light": "#F5F5F7",
+          "dark": "#121212"
+        },
+        "accent": {
+          "DEFAULT": "#004E64",
+          "light": "#E0F2F1"
+        },
+        "text": {
+          "primary": "#0F172A",
+          "secondary": "#475569",
+          "muted": "#94A3B8"
+        }
+      },
+      "theme_strategy": "light-preferred-with-dark-toggle"
+    },
+    "layout": {
+      "grid_system": "Bento Grid (CSS Grid)",
+      "spacing": {
+        "container": "max-w-7xl mx-auto px-6 md:px-12",
+        "section_gap": "py-24 md:py-32",
+        "element_gap": "gap-6 md:gap-8"
+      },
+      "border_radius": {
+        "default": "rounded-none",
+        "card": "rounded-sm",
+        "button": "rounded-full"
+      }
+    },
+    "components": {
+      "ui_library": "shadcn/ui",
+      "required_components": [
+        "Button",
+        "Card",
+        "Badge",
+        "Separator",
+        "ScrollArea",
+        "Tooltip",
+        "Sheet",
+        "NavigationMenu"
+      ],
+      "custom_components": [
+        "ProjectCard (Bento Style)",
+        "TechStackTicker",
+        "HeroSection (Split Layout)",
+        "ContactForm (Simple)"
+      ]
+    },
+    "motion": {
+      "library": "framer-motion",
+      "animations": {
+        "fade_up": {
+          "initial": { "opacity": 0, "y": 20 },
+          "animate": { "opacity": 1, "y": 0 },
+          "transition": { "duration": 0.5, "ease": "easeOut" }
+        },
+        "stagger_children": {
+          "animate": { "transition": { "staggerChildren": 0.1 } }
+        },
+        "hover_lift": {
+          "whileHover": { "y": -5, "transition": { "duration": 0.2 } }
+        }
+      }
+    }
+  },
+  "content_strategy": {
+    "sections": [
+      {
+        "id": "hero",
+        "title": "Data Scientist & Engineer",
+        "subtitle": "Transforming raw data into actionable business intelligence through advanced analytics and machine learning.",
+        "cta": "View Projects",
+        "image_url": "https://images.unsplash.com/photo-1765046255500-ce203b84c307?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwc2NpZW5jZSUyMGFic3RyYWN0JTIwdmlzdWFsaXphdGlvbiUyMG1pbmltYWx8ZW58MHx8fHwxNzcyNTU4NTI2fDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "id": "about",
+        "title": "About Me",
+        "content": "Specialized in building scalable data pipelines and predictive models. With a background in applied mathematics and computer science, I focus on creating robust solutions that drive decision-making.",
+        "image_url": "https://images.unsplash.com/photo-1649705433263-5c80d699b5f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxtYW4lMjBzbWlsaW5nJTIwb2ZmaWNlJTIwZ2xhc3NlcyUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MjU1ODU1M3ww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "id": "skills",
+        "categories": [
+          {
+            "name": "Machine Learning",
+            "skills": ["Python", "Scikit-Learn", "TensorFlow", "Pandas", "NumPy"]
+          },
+          {
+            "name": "Data Engineering",
+            "skills": ["SQL", "PostgreSQL", "MongoDB", "ETL Pipelines", "Docker"]
+          },
+          {
+            "name": "Visualization",
+            "skills": ["Tableau", "PowerBI", "Streamlit", "Matplotlib", "Seaborn"]
+          }
+        ]
+      },
+      {
+        "id": "projects",
+        "title": "Selected Works",
+        "featured_projects": [
+          {
+            "title": "Energy Consumption Prediction",
+            "description": "Machine Learning model to forecast building energy needs using historical data.",
+            "tech": ["Python", "Scikit-Learn", "Time Series"],
+            "repo_path": "/app/energy-prediction-machine-learning-model",
+            "image_url": "https://images.unsplash.com/photo-1760112783563-514867b4c2ed?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHxmdXR1cmlzdGljJTIwZGlnaXRhbCUyMGRhdGElMjB3YXZlcyUyMGJsdWUlMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MjU1ODU1M3ww&ixlib=rb-4.1.0&q=85"
+          },
+          {
+            "title": "OLAP Architecture Audit",
+            "description": "Comprehensive audit and optimization of a supermarket data warehouse architecture.",
+            "tech": ["SQL", "Data Warehousing", "OLAP"],
+            "repo_path": "/app/audit-architecture-olap-supermarket",
+            "image_url": "https://images.unsplash.com/photo-1770278856325-e313d121ea16?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBvZmZpY2UlMjBsYXB0b3AlMjBkYXRhJTIwYW5hbHlzaXN8ZW58MHx8fHwxNzcyNTU4NTI2fDA&ixlib=rb-4.1.0&q=85"
+          },
+          {
+            "title": "COVID-19 Dashboard",
+            "description": "Interactive Streamlit dashboard visualizing global pandemic trends and statistics.",
+            "tech": ["Python", "Streamlit", "Plotly"],
+            "repo_path": "/app/covid19-streamlit-dashboard",
+            "image_url": "https://images.unsplash.com/photo-1765046255517-412341954c4c?crop=entropy&cs=srgb\u0026fm=jpg\u0026ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwzfHxkYXRhJTIwc2NpZW5jZSUyMGFic3RyYWN0JTIwdmlzdWFsaXphdGlvbiUyMG1pbmltYWx8ZW58MHx8fHwxNzcyNTU4NTI2fDA\u0026ixlib=rb-4.1.0\u0026q=85"
+          },
+          {
+             "title": "Bank Marketing Analysis",
+             "description": "Data-driven analysis of marketing campaigns to optimize ROI and conversion rates.",
+             "tech": ["Python", "Pandas", "Business Intelligence"],
+             "repo_path": "/app/analyse-campagne-marketing-bancaire",
+             "image_url": "https://images.unsplash.com/photo-1765046255478-55efc763637c?crop=entropy&cs=srgb\u0026fm=jpg\u0026ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxkYXRhJTIwc2NpZW5jZSUyMGFic3RyYWN0JTIwdmlzdWFsaXphdGlvbiUyMG1pbmltYWx8ZW58MHx8fHwxNzcyNTU4NTI2fDA\u0026ixlib=rb-4.1.0\u0026q=85"
+          }
+        ]
+      },
+      {
+        "id": "contact",
+        "links": [
+          { "name": "GitHub", "url": "https://github.com/", "icon": "Github" },
+          { "name": "LinkedIn", "url": "https://linkedin.com/", "icon": "Linkedin" },
+          { "name": "Email", "url": "mailto:contact@example.com", "icon": "Mail" }
+        ]
+      }
+    ]
+  },
+  "implementation_guide": {
+    "setup_steps": [
+      "Initialize React project with Vite (JavaScript)",
+      "Install Tailwind CSS and configured shadcn/ui",
+      "Install lucide-react, framer-motion, clsx, tailwind-merge",
+      "Create components/ui folder and add Button, Card, etc.",
+      "Implement the Layout component with Navbar and Footer",
+      "Build the Hero section with the grid background image",
+      "Build the Projects Grid using CSS Grid (Bento)",
+      "Ensure all text has sufficient contrast (WCAG AA)"
+    ],
+    "universal_guidelines": [
+      "Use 'Outfit' for all headings (h1-h3)",
+      "Use 'Inter' for body text",
+      "Use 'JetBrains Mono' for any code snippets or tech tags",
+      "Primary Action Color: #002FA7 (International Klein Blue)",
+      "Do not use gradients for text",
+      "Ensure mobile responsiveness (stack grids on small screens)",
+      "Add hover states to all interactive elements (transform: translateY(-2px))"
+    ]
+  }
+}
