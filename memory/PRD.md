@@ -1,7 +1,7 @@
 # Portfolio Data Science - ENDAYE Aimé
 
 ## Date: 03 Mars 2026
-## Dernière mise à jour: 03 Mars 2026 - Design v3 Dark Blue Theme avec modals détaillés
+## Dernière mise à jour: 03 Mars 2026 - 24 Projets Complets avec Modals Détaillés
 
 ## Problème Original
 Créer un portfolio simple et basique pour un professionnel de la data science avec les projets contenus dans le dépôt GitHub.
