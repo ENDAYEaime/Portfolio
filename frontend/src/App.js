@@ -855,29 +855,31 @@ function Navbar() {
   ];
 
   return (
-    <nav data-testid="navbar" className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#0a1628]/95 backdrop-blur-xl border-b border-blue-500/20' : 'bg-transparent'}`}>
+    <nav data-testid="navbar" className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#020817]/90 backdrop-blur-xl border-b border-blue-500/10' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#hero" data-testid="nav-logo" className="font-heading font-bold text-xl md:text-2xl text-blue-400 flex items-center gap-2">
-            <Database className="w-6 h-6" />
-            ENDAYE Aimé
+          <a href="#hero" data-testid="nav-logo" className="font-heading font-bold text-xl md:text-2xl gradient-text flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+              <Database className="w-4 h-4 text-white" />
+            </div>
+            EA
           </a>
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="font-medium text-slate-400 hover:text-blue-400 transition-colors relative group">
+              <a key={link.name} href={link.href} className="px-4 py-2 font-medium text-slate-400 hover:text-white transition-all rounded-lg hover:bg-white/5 relative group">
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all group-hover:w-3/4 rounded-full" />
               </a>
             ))}
           </div>
-          <button data-testid="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-slate-400 hover:text-blue-400">
+          <button data-testid="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-slate-400 hover:text-white rounded-lg hover:bg-white/5">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
         {isOpen && (
-          <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="md:hidden bg-[#0a1628]/95 backdrop-blur-xl border-t border-blue-500/20 py-4">
+          <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="md:hidden bg-[#020817]/95 backdrop-blur-xl border-t border-blue-500/10 py-4">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="block py-3 px-4 font-medium text-slate-400 hover:text-blue-400 hover:bg-blue-500/10">
+              <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="block py-3 px-4 font-medium text-slate-400 hover:text-white hover:bg-blue-500/10 rounded-lg mx-2">
                 {link.name}
               </a>
             ))}
@@ -892,52 +894,112 @@ function Navbar() {
 function Hero() {
   return (
     <section id="hero" data-testid="hero-section" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-[#0a1628]" />
+      {/* Deep blue background */}
+      <div className="absolute inset-0 bg-[#020817]" />
+      
+      {/* Animated grid */}
       <div className="absolute inset-0 data-grid-bg" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/15 rounded-full blur-3xl" />
+      
+      {/* Noise overlay */}
+      <div className="absolute inset-0 noise-overlay" />
+      
+      {/* Animated gradient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[100px] animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-600/15 rounded-full blur-[100px] animate-pulse" style={{animationDelay: '1s'}} />
+      <div className="absolute top-1/2 right-1/3 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[80px] animate-pulse" style={{animationDelay: '2s'}} />
+
+      {/* Scanning line effect */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent scan-line" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 relative z-10">
         <motion.div className="text-center" initial="initial" animate="animate" variants={stagger}>
-          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-blue-600/20 border border-blue-500/40 rounded-full px-5 py-2 mb-8">
-            <span className="w-2 h-2 bg-green-400 rounded-full pulse-dot" />
-            <span className="text-sm text-blue-300 font-mono">Disponible pour opportunités</span>
+          
+          {/* Status badge */}
+          <motion.div 
+            variants={fadeUp} 
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 border border-blue-400/30 rounded-full px-6 py-2.5 mb-8 backdrop-blur-sm"
+          >
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
+            </span>
+            <span className="text-sm text-cyan-300 font-mono tracking-wide">Disponible pour opportunités</span>
           </motion.div>
-          <motion.p variants={fadeUp} className="text-blue-400 font-mono text-sm md:text-base tracking-widest uppercase mb-4">Data Science & Intelligence Artificielle</motion.p>
-          <motion.h1 variants={fadeUp} className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
-            <span className="text-white">ENDAYE</span> <span className="gradient-text glow-text">Aimé</span>
+
+          {/* Title */}
+          <motion.div variants={fadeUp} className="mb-4">
+            <span className="inline-block px-4 py-1 rounded-full text-sm font-mono tracking-[0.2em] uppercase bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-cyan-400 border border-cyan-500/20">
+              Data Science & Intelligence Artificielle
+            </span>
+          </motion.div>
+          
+          {/* Name */}
+          <motion.h1 variants={fadeUp} className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8">
+            <span className="text-white">ENDAYE</span>{" "}
+            <span className="gradient-text-alt glow-text">Aimé</span>
           </motion.h1>
-          <motion.p variants={fadeUp} className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Transformer les <span className="text-blue-400 font-medium">données brutes</span> en insights actionnables grâce à l'analyse avancée et le <span className="text-blue-400 font-medium">machine learning</span>.
+          
+          {/* Description */}
+          <motion.p variants={fadeUp} className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+            Transformer les <span className="text-cyan-400 font-medium">données brutes</span> en insights actionnables grâce à l'analyse avancée et le <span className="text-blue-400 font-medium">machine learning</span>.
           </motion.p>
+          
+          {/* CTA Buttons */}
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#projects" data-testid="cta-projects" className="group inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-blue-600/30 hover:-translate-y-1">
-              <Database className="w-5 h-5" />
-              Voir mes 24 projets
-              <ChevronDown size={18} className="group-hover:translate-y-1 transition-transform" />
+            <a 
+              href="#projects" 
+              data-testid="cta-projects" 
+              className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium overflow-hidden transition-all hover:-translate-y-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-lg shadow-blue-600/25"
+            >
+              <Database className="w-5 h-5 text-white" />
+              <span className="text-white">Voir mes 24 projets</span>
+              <ChevronDown size={18} className="text-white group-hover:translate-y-1 transition-transform" />
             </a>
-            <a href="#contact" data-testid="cta-contact" className="inline-flex items-center justify-center gap-2 border-2 border-blue-500/50 text-blue-400 px-8 py-4 rounded-lg font-medium hover:bg-blue-600/20 hover:border-blue-400 transition-all">
+            <a 
+              href="#contact" 
+              data-testid="cta-contact" 
+              className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium border border-blue-500/40 text-blue-400 hover:border-cyan-400/60 hover:text-cyan-400 hover:bg-cyan-500/5 transition-all backdrop-blur-sm"
+            >
               <Terminal className="w-5 h-5" />
               Me contacter
             </a>
           </motion.div>
-          <motion.div variants={fadeUp} className="grid grid-cols-3 gap-8 mt-20 max-w-xl mx-auto">
+
+          {/* Stats */}
+          <motion.div variants={fadeUp} className="grid grid-cols-3 gap-6 mt-20 max-w-2xl mx-auto">
             {[
-              { value: "24", label: "Projets Data", icon: Database },
-              { value: "15+", label: "Technologies", icon: Code },
-              { value: "2+", label: "Années XP", icon: TrendingUp }
+              { value: "24", label: "Projets Data", icon: Database, color: "from-cyan-400 to-blue-500" },
+              { value: "15+", label: "Technologies", icon: Code, color: "from-blue-400 to-indigo-500" },
+              { value: "2+", label: "Années XP", icon: TrendingUp, color: "from-indigo-400 to-purple-500" }
             ].map((stat, i) => (
-              <div key={i} className="text-center group">
-                <stat.icon className="w-6 h-6 text-blue-500 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <div className="font-heading text-3xl md:text-4xl font-bold text-white">{stat.value}</div>
-                <div className="text-sm text-slate-500 mt-1">{stat.label}</div>
-              </div>
+              <motion.div 
+                key={i} 
+                className="relative group p-6 rounded-2xl bg-gradient-to-b from-white/5 to-transparent border border-white/5 hover:border-blue-500/30 transition-all cursor-default"
+                whileHover={{ y: -5 }}
+              >
+                <div className={`w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br ${stat.color} p-0.5`}>
+                  <div className="w-full h-full rounded-xl bg-[#020817] flex items-center justify-center">
+                    <stat.icon className="w-5 h-5 text-white" />
+                  </div>
+                </div>
+                <div className="font-heading text-4xl md:text-5xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-sm text-slate-500">{stat.label}</div>
+              </motion.div>
             ))}
           </motion.div>
         </motion.div>
       </div>
-      <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2" animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }}>
-        <ChevronDown className="w-6 h-6 text-blue-500/50" />
+
+      {/* Scroll indicator */}
+      <motion.div 
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        animate={{ y: [0, 10, 0] }} 
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <span className="text-xs text-slate-600 font-mono">scroll</span>
+        <ChevronDown className="w-5 h-5 text-blue-500/40" />
       </motion.div>
     </section>
   );
@@ -966,7 +1028,7 @@ function About() {
   ];
 
   return (
-    <section id="about" data-testid="about-section" className="py-24 md:py-32 bg-[#0d1b2a] relative">
+    <section id="about" data-testid="about-section" className="py-24 md:py-32 bg-[#030d1c] relative">
       <div className="absolute inset-0 data-grid-bg opacity-50" />
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <motion.div initial="initial" whileInView="animate" viewport={{ once: true }} variants={stagger}>
@@ -995,7 +1057,7 @@ function About() {
               </p>
               
               {/* Competences from projects */}
-              <div className="mt-8 p-6 bg-[#0a1628] border border-blue-500/20 rounded-xl">
+              <div className="mt-8 p-6 bg-[#020817] border border-blue-500/20 rounded-xl">
                 <h4 className="font-heading text-lg font-semibold text-white mb-4 flex items-center gap-2">
                   <Cpu className="w-5 h-5 text-blue-400" />
                   Ce sur quoi j'ai travaillé
@@ -1020,7 +1082,7 @@ function About() {
 
             {/* Formation - Takes 2 columns */}
             <motion.div variants={fadeUp} className="lg:col-span-2">
-              <div className="bg-[#0a1628] border border-blue-500/30 rounded-xl p-6 sticky top-24">
+              <div className="bg-[#020817] border border-blue-500/30 rounded-xl p-6 sticky top-24">
                 <h3 className="font-heading text-xl font-semibold text-white mb-6 flex items-center gap-3">
                   <GraduationCap className="w-5 h-5 text-blue-400" />
                   Formation
@@ -1052,7 +1114,7 @@ function About() {
 // Skills Section
 function Skills() {
   return (
-    <section id="skills" data-testid="skills-section" className="py-24 md:py-32 bg-[#0a1628] relative overflow-hidden">
+    <section id="skills" data-testid="skills-section" className="py-24 md:py-32 bg-[#020817] relative overflow-hidden">
       <div className="absolute inset-0 data-grid-bg" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-b from-blue-600/10 to-transparent" />
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -1077,7 +1139,7 @@ function Skills() {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {skill.items.map((item) => (
-                      <span key={item} className="font-mono text-xs bg-[#0a1628] text-slate-400 px-3 py-1.5 rounded-lg border border-blue-500/20 hover:border-blue-500/40 hover:text-blue-400 transition-colors">{item}</span>
+                      <span key={item} className="font-mono text-xs bg-[#020817] text-slate-400 px-3 py-1.5 rounded-lg border border-blue-500/20 hover:border-blue-500/40 hover:text-blue-400 transition-colors">{item}</span>
                     ))}
                   </div>
                 </motion.div>
@@ -1158,7 +1220,7 @@ function Projects() {
   const filteredProjects = filter === "Tous" ? projects : projects.filter(p => p.category === filter);
 
   return (
-    <section id="projects" data-testid="projects-section" className="py-24 md:py-32 bg-[#0d1b2a] relative">
+    <section id="projects" data-testid="projects-section" className="py-24 md:py-32 bg-[#030d1c] relative">
       <div className="absolute inset-0 data-grid-bg opacity-30" />
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div>
@@ -1174,7 +1236,7 @@ function Projects() {
           {/* Filter */}
           <div className="flex flex-wrap gap-2 mb-10">
             {categories.map((cat) => (
-              <button key={cat} onClick={() => setFilter(cat)} data-testid={`filter-${cat.toLowerCase().replace(' ', '-')}`} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${filter === cat ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'bg-[#0a1628] text-slate-400 border border-blue-500/20 hover:border-blue-500/50 hover:text-blue-400'}`}>
+              <button key={cat} onClick={() => setFilter(cat)} data-testid={`filter-${cat.toLowerCase().replace(' ', '-')}`} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${filter === cat ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'bg-[#020817] text-slate-400 border border-blue-500/20 hover:border-blue-500/50 hover:text-blue-400'}`}>
                 {cat} {cat === "Tous" && `(${projects.length})`}
               </button>
             ))}
@@ -1192,7 +1254,7 @@ function Projects() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   whileHover={{ y: -6 }} 
                   data-testid={`project-card-${index}`} 
-                  className="group bg-[#0a1628] border border-blue-500/20 hover:border-blue-500/50 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer" 
+                  className="group bg-[#020817] border border-blue-500/20 hover:border-blue-500/50 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer" 
                   onClick={() => setSelectedProject(project)}
                 >
                   <div className="aspect-video overflow-hidden bg-[#0d1b2a] relative">
@@ -1228,7 +1290,7 @@ function Projects() {
 // Contact Section
 function Contact() {
   return (
-    <section id="contact" data-testid="contact-section" className="py-24 md:py-32 bg-[#0a1628] relative overflow-hidden">
+    <section id="contact" data-testid="contact-section" className="py-24 md:py-32 bg-[#020817] relative overflow-hidden">
       <div className="absolute inset-0 data-grid-bg" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-t from-blue-600/10 to-transparent" />
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -1270,7 +1332,7 @@ function Contact() {
 // Footer
 function Footer() {
   return (
-    <footer data-testid="footer" className="bg-[#071018] border-t border-blue-500/20 py-8">
+    <footer data-testid="footer" className="bg-[#010410] border-t border-blue-500/10 py-8">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-slate-500">
@@ -1287,7 +1349,7 @@ function Footer() {
 // Main App
 function App() {
   return (
-    <div className="min-h-screen bg-[#0a1628]">
+    <div className="min-h-screen bg-[#020817]">
       <Navbar />
       <main>
         <Hero />
