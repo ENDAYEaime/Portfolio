@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Hybride Cloud AWS – InduTechData – ENDAYE Aimé</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+    <header>
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#projets">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="project-page">
+        <article class="project-content">
+            <h1>Architecture Hybride Cloud AWS – InduTechData</h1>
+
+            <section class="project-details">
+                <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+                <p>Conception, modélisation et évaluation d'une infrastructure hybride cloud pour la société InduTechData, combinant environnements on-premise et cloud AWS. Ce projet comprend :</p>
+                <ul>
+                    <li><strong>Architecture hybride</strong> : conception d'un schéma d'infrastructure combinant datacenter privé et services AWS (EC2, S3, RDS, VPN)</li>
+                    <li><strong>Traitement de données en temps réel</strong> : intégration de RedPanda (Kafka-compatible) pour le streaming et Apache Spark pour le traitement distribué</li>
+                    <li><strong>Évaluation de compatibilité</strong> : analyse de la compatibilité entre les systèmes existants et la nouvelle infrastructure cloud</li>
+                    <li><strong>Documentation technique</strong> : production de schémas d'architecture, rapports d'évaluation et recommandations</li>
+                </ul>
+                <div class="tech-stack">
+                    <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+                    <ul>
+                        <li><strong>AWS</strong> (EC2, S3, RDS, VPN)</li>
+                        <li><strong>RedPanda</strong> (streaming de données)</li>
+                        <li><strong>Apache Spark</strong></li>
+                        <li><strong>Architecture hybride Cloud / On-Premise</strong></li>
+                        <li><strong>Draw.io / SVG</strong> (schémas d'architecture)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="code-section-wrapper">
+                <section class="project-code">
+                    <h2><i class="fas fa-code"></i> Extrait de configuration</h2>
+                    <pre><code class="language-yaml">
+# Architecture hybride – composants principaux
+infrastructure:
+  on_premise:
+    - service: PostgreSQL
+      role: Base de données transactionnelle
+    - service: RedPanda
+      role: Streaming temps réel (Kafka-compatible)
+
+  cloud_aws:
+    - service: EC2
+      role: Traitement Spark distribué
+    - service: S3
+      role: Data Lake – stockage des données brutes
+    - service: RDS
+      role: Base de données analytique managée
+    - service: VPN Gateway
+      role: Connexion sécurisée on-premise ↔ AWS
+
+  flux_donnees:
+    source: Capteurs IoT industriels
+    pipeline: RedPanda → Spark → S3 → RDS → Reporting
+                    </code></pre>
+                </section>
+                <div class="github-link">
+                    <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i>
+                        Voir le code complet sur GitHub
+                    </a>
+                    <p class="github-description">
+                        Accédez au repository complet pour explorer :
+                        <ul>
+                            <li>Les schémas d'architecture (SVG, draw.io)</li>
+                            <li>Les rapports d'évaluation de compatibilité</li>
+                            <li>La présentation technique complète</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex-sections">
+                <section class="project-results">
+                    <h2><i class="fas fa-chart-bar"></i> Points clés</h2>
+                    <ul>
+                        <li><i class="fas fa-cloud"></i> Architecture hybride cloud AWS documentée</li>
+                        <li><i class="fas fa-stream"></i> Pipeline streaming RedPanda + Spark</li>
+                        <li><i class="fas fa-file-alt"></i> Rapport d'évaluation de compatibilité</li>
+                        <li><i class="fas fa-shield-alt"></i> Connexion sécurisée VPN on-premise ↔ cloud</li>
+                    </ul>
+                </section>
+                <section class="project-features">
+                    <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+                    <ul>
+                        <li><i class="fas fa-network-wired"></i> Conception d'infrastructure multi-couches</li>
+                        <li><i class="fas fa-exchange-alt"></i> Intégration streaming temps réel</li>
+                        <li><i class="fas fa-sitemap"></i> Modélisation et schématisation d'architecture</li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ENDAYE Aimé – Portfolio Data Science</p>
+    </footer>
+</body>
+</html>

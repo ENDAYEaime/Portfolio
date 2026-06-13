@@ -1,0 +1,31 @@
+product_id,price,stock_quantity,stock_status,onsale_web,id_web,post_title,post_name,total_sales,z_score
+6215.0,115.0,4.0,instock,1.0,12790,Domaine des Comtes Lafon Volnay 1er Cru Champans 2014,domaine-des-comtes-lafon-volnay-1er-cru-champans-2014,0,2.966749566056165
+4352.0,225.0,0.0,outofstock,1.0,15940,Champagne Egly-Ouriet Grand Cru Millésimé 2008,champagne-egly-ouriet-grand-cru-millesime-2008,5,6.922086630251678
+4407.0,104.0,6.0,instock,1.0,3509,Cognac Frapin Cigar Blend,cognac-frapin-cigar-blend,1,2.571215859636614
+4406.0,157.0,3.0,instock,1.0,7819,Cognac Frapin Château de Fontpinot 1989 20 Ans d'Age,cognac-frapin-chateau-de-fontpinot-1989-20-ans,0,4.476969172385361
+6126.0,135.0,10.0,instock,1.0,14923,Champagne Gosset Célébris Vintage 2007,champagne-gosset-celebris-vintage-2007,2,3.685901759546258
+6214.0,99.0,7.0,instock,1.0,11601,Domaine des Comtes Lafon Volnay 1er Cru Champans 2013,domaine-des-comtes-lafon-volnay-1er-cru-champans-2013,0,2.3914278112640903
+5001.0,217.5,20.0,instock,1.0,14581,David Duband Charmes-Chambertin Grand Cru 2014,david-duband-charmes-chambertin-grand-cru-2014,0,6.6524045576928925
+4115.0,100.0,11.0,instock,1.0,15382,Zind-Humbrecht Riesling Grand Cru Rangen De Thann Clos Saint-Urbain 2017,zind-humbrecht-riesling-gc-rangen-thann-clos-st-urbain-2017,0,2.427385420938595
+4132.0,88.4,5.0,instock,1.0,11668,Zind-Humbrecht Pinot Gris Grand Cru Rangen De Thann Clos Saint-Urbain 2012,zind-humbrecht-pinot-gris-grand-cru-rangen-de-thann-clos-saint-urbain-2012,0,2.010277148714341
+5008.0,105.0,10.0,instock,1.0,11602,Domaine des Comtes Lafon Volnay 1er Cru Santenots du Milieu 2013,domaine-des-comtes-lafon-volnay-1er-cru-santenots-du-milieu-2013,0,2.6071734693111184
+5612.0,124.8,12.0,instock,1.0,14915,Domaine Weinbach Gewurztraminer Grand Cru Furstentum SGN 2010 1/2,domaine-weinbach-gewurztraminer-gc-furstentum-sgn-2010,0,3.31913414086631
+4404.0,108.5,2.0,instock,1.0,3507,Cognac Frapin Château de Fontpinot XO,cognac-frapin-fontpinot-xo,2,2.733025103171885
+5918.0,114.0,8.0,instock,1.0,14773,Wemyss Malts Single Cask Scotch Whisky Chai Caramel Latte 2002 Craigellachie,wemyss-malts-single-cask-scotch-whisky-chai-caramel-latte-2002,0,2.9307919563816602
+5767.0,175.0,12.0,instock,1.0,15185,Camille Giroud Clos de Vougeot 2016,camille-giroud-clos-de-vougeot-2016,0,5.124206146526444
+6213.0,121.0,7.0,instock,1.0,15072,Domaine des Comtes Lafon Volnay 1er Cru Santenots du Milieu 2016,domaine-des-comtes-lafon-volnay-1er-cru-santenots-du-milieu-2016,0,3.1824952241031927
+5565.0,92.0,0.0,outofstock,1.0,19822,Tempier Bandol Cabassaou 2017,tempier-bandol-cabassaou-2017,0,2.139724543542558
+5025.0,112.0,0.0,outofstock,1.0,13914,Champagne Agrapart &amp; Fils L'Avizoise Extra Brut Blanc de Blancs Grand Cru 2012,champagne-agrapart-fils-lavizoise-grand-cru-2012-extra-brut-blanc-de-blancs,0,2.858876737032651
+5916.0,93.0,3.0,instock,1.0,14774,Wemyss Malts Single Cask Scotch Whisky Chocolate Moka Cake 2005 Strathclyde,wemyss-malts-single-cask-chocolate-moka-cake,0,2.1756821532170623
+5917.0,122.0,4.0,instock,1.0,14775,Wemyss Malts Single Cask Scotch Whisky Choc 'n' Nut Pretzel 2001 Bunnahabhain,wemyss-malts-single-cask-scotch-whisky-choc-n-nut-pretzel-2001,0,3.2184528337776976
+6201.0,105.6,7.0,instock,1.0,14596,David Duband Chambolle-Musigny 1er Cru Les Sentiers 2016,david-duband-chambolle-musigny-1er-cru-les-sentiers-2016,0,2.628748035115821
+5007.0,105.0,17.0,instock,1.0,12791,Domaine des Comtes Lafon Volnay 1er Cru Santenots du Milieu 2014,domaine-des-comtes-lafon-volnay-1er-cru-santenots-du-milieu-2014,0,2.6071734693111184
+4402.0,176.0,8.0,instock,1.0,3510,Cognac Frapin VIP XO,cognac-frapin-vip-xo,13,5.160163756200949
+4904.0,137.0,13.0,instock,1.0,14220,Domaine Des Croix Corton Charlemagne Grand Cru 2016,domaine-des-croix-corton-charlemagne-grand-cru-2016,5,3.7578169788952676
+4582.0,109.6,7.0,instock,1.0,12857,Château de Meursault Puligny-Montrachet 1er Cru Champ Canet 2014,chateau-de-puligny-montrachet-1cru-champ-canet-2014,0,2.7725784738138395
+4903.0,102.3,20.0,instock,1.0,14805,Domaine Des Croix Corton Grand Cru Les Grèves 2017,domaine-des-croix-corton-grand-cru-les-greves-2017,0,2.510087923189955
+5892.0,191.3,10.0,instock,1.0,14983,Coteaux Champenois Egly-Ouriet Ambonnay Rouge 2016,coteaux-champenois-egly-ouriet-ambonnay-rouge-2016,3,5.710315184220871
+6202.0,116.4,14.0,instock,1.0,15126,Domaine Clerget Echezeaux Grand Cru En Orveaux 2015,domaine-clerget-echezeaux-en-orveaux-2015,0,3.0170902196004716
+6216.0,121.0,6.0,instock,1.0,15070,Domaine des Comtes Lafon Volnay 1er Cru Champans 2016,domaine-des-comtes-lafon-volnay-1er-cru-champans-2016,0,3.1824952241031927
+4355.0,126.5,2.0,instock,1.0,12589,Champagne Egly-Ouriet Grand Cru Blanc de Noirs,champagne-egly-ouriet-grand-cru-brut-blanc-de-noirs,11,3.3802620773129686
+6212.0,115.0,2.0,instock,1.0,13996,Domaine des Comtes Lafon Volnay 1er Cru Santenots du Milieu 2015,domaine-des-comtes-lafon-volnay-1er-cru-santenots-du-milieu-2015,2,2.966749566056165

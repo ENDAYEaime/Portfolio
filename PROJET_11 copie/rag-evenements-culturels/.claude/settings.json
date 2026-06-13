@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python tests/test_ragas.py)",
+      "Bash(.venv/bin/pip show *)",
+      "Bash(python -c \"import ragas; print\\(ragas.__version__\\)\")",
+      "Bash(python -c \"from ragas.metrics.collections import faithfulness; print\\(dir\\(faithfulness\\)\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(python -c \"from mistralai import Mistral; print\\('mistralai OK'\\)\")",
+      "Bash(python -c \"from ragas.llms.base import llm_factory; print\\('llm_factory OK'\\)\")",
+      "Bash(python -c \"from ragas.llms import LiteLLMStructuredLLM; print\\('LiteLLM OK'\\)\")",
+      "Bash(python -c \"import litellm; print\\('litellm version:', litellm.__version__\\)\")",
+      "Bash(python -c \"from openai import OpenAI; print\\('openai OK'\\)\")"
+    ]
+  }
+}

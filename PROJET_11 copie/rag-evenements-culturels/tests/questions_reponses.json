@@ -1,0 +1,36 @@
+[
+    {
+        "question": "Donne-moi des événements pour enfants",
+        "ground_truth": "Le chatbot doit recommander des événements destinés aux enfants ou aux familles."
+    },
+
+    {
+        "question": "Je cherche un concert payant",
+        "ground_truth": "Le chatbot doit recommander des concerts payants s'ils existent dans la base de données."
+    },
+
+    {
+        "question": "Quels événements culturels sont prévus à Marseille ?",
+        "ground_truth": "Le chatbot doit recommander des événements situés à Marseille."
+    },
+
+    {
+        "question": "Je cherche une exposition d'art",
+        "ground_truth": "Le chatbot doit recommander des expositions ou événements liés à l'art."
+    },
+
+    {
+        "question": "Quels événements ont lieu ce week-end ?",
+        "ground_truth": "Le chatbot doit recommander des événements dont la date correspond au week-end demandé."
+    },
+
+    {
+        "question": "Je cherche des événements gratuits",
+        "ground_truth": "Le chatbot doit recommander des événements gratuits lorsque cette information est disponible."
+    },
+
+    {
+        "question": "Je cherche un spectacle de musique",
+        "ground_truth": "Le chatbot doit recommander des concerts ou spectacles musicaux pertinents."
+    }
+]

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Data Solution – Pipeline BI & Avantages Salariés – ENDAYE Aimé</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+    <header>
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#projets">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="project-page">
+        <article class="project-content">
+            <h1>Sport Data Solution – Pipeline BI & Avantages Salariés</h1>
+
+            <section class="project-details">
+                <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+                <p>POC (Proof of Concept) d'un pipeline de données end-to-end pour la société Sport Data Solution, permettant de calculer et d'attribuer automatiquement des avantages salariés liés à la pratique sportive. Ce projet comprend :</p>
+                <ul>
+                    <li><strong>Ingestion des données RH</strong> : chargement et validation des fichiers salariés (salaire, domicile, mode de déplacement)</li>
+                    <li><strong>Simulation d'activités sportives</strong> : génération d'un historique de 12 mois d'activités sportives déclarées</li>
+                    <li><strong>Calcul des avantages</strong> : prime sportive (5% du salaire) et journées bien-être (5 jours si ≥ 15 activités/an)</li>
+                    <li><strong>Vérification Google Maps API</strong> : validation de la cohérence entre le mode de déplacement déclaré et la distance domicile-bureau</li>
+                    <li><strong>Dashboard Power BI</strong> : restitution visuelle des résultats pour les RH et la direction</li>
+                </ul>
+                <div class="tech-stack">
+                    <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+                    <ul>
+                        <li><strong>Python</strong></li>
+                        <li><strong>Kestra</strong> (orchestration du pipeline)</li>
+                        <li><strong>SQL</strong></li>
+                        <li><strong>Power BI</strong></li>
+                        <li><strong>Docker</strong></li>
+                        <li><strong>API Google Maps</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="code-section-wrapper">
+                <section class="project-code">
+                    <h2><i class="fas fa-code"></i> Extrait du code</h2>
+                    <pre><code class="language-python">
+def calculer_avantages(salarie: dict, activites: list) -> dict:
+    """Calcule les avantages sportifs d'un salarié."""
+    salaire_brut = salarie["salaire_annuel"]
+    mode_deplacement = salarie["mode_deplacement"]
+    nb_activites = len(activites)
+
+    modes_sportifs = {"marche", "running", "velo", "trottinette"}
+    prime_sportive = (
+        salaire_brut * 0.05
+        if mode_deplacement in modes_sportifs
+        else 0
+    )
+
+    jours_bien_etre = 5 if nb_activites >= 15 else 0
+
+    return {
+        "nom": salarie["nom"],
+        "prime_sportive": prime_sportive,
+        "jours_bien_etre": jours_bien_etre,
+        "nb_activites_annuelles": nb_activites,
+        "mode_deplacement": mode_deplacement,
+    }
+                    </code></pre>
+                </section>
+                <div class="github-link">
+                    <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i>
+                        Voir le code complet sur GitHub
+                    </a>
+                    <p class="github-description">
+                        Accédez au repository complet pour explorer :
+                        <ul>
+                            <li>Le pipeline Kestra complet (ingestion → calcul → restitution)</li>
+                            <li>Les scripts Python de traitement et validation</li>
+                            <li>Le dashboard Power BI et la note de cadrage</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex-sections">
+                <section class="project-results">
+                    <h2><i class="fas fa-chart-bar"></i> Points clés</h2>
+                    <ul>
+                        <li><i class="fas fa-running"></i> Pipeline end-to-end RH → calcul → dashboard</li>
+                        <li><i class="fas fa-euro-sign"></i> Calcul automatisé des primes sportives</li>
+                        <li><i class="fas fa-calendar-check"></i> Attribution des journées bien-être</li>
+                        <li><i class="fas fa-chart-pie"></i> Restitution visuelle Power BI pour les RH</li>
+                    </ul>
+                </section>
+                <section class="project-features">
+                    <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+                    <ul>
+                        <li><i class="fas fa-map-marked-alt"></i> Vérification géographique via Google Maps API</li>
+                        <li><i class="fas fa-bell"></i> Notifications automatiques (Slack)</li>
+                        <li><i class="fas fa-shield-alt"></i> Contrôles qualité des données RH</li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ENDAYE Aimé – Portfolio Data Science</p>
+    </footer>
+</body>
+</html>

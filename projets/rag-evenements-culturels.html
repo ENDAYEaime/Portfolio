@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistant RAG – Événements Culturels OpenAgenda – ENDAYE Aimé</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+    <header>
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#projets">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="project-page">
+        <article class="project-content">
+            <h1>Assistant RAG – Recommandation d'Événements Culturels</h1>
+
+            <section class="project-details">
+                <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+                <p>Développement d'un assistant conversationnel intelligent basé sur l'architecture RAG (Retrieval Augmented Generation), capable de recommander des événements culturels issus de la plateforme OpenAgenda. Ce projet intègre :</p>
+                <ul>
+                    <li><strong>Collecte de données</strong> : extraction d'événements culturels via l'API OpenAgenda pour Paris et la France</li>
+                    <li><strong>Vectorisation sémantique</strong> : génération d'embeddings avec Mistral AI et indexation dans FAISS pour la recherche par similarité</li>
+                    <li><strong>Pipeline RAG</strong> : orchestration LangChain pour relier la recherche vectorielle à la génération de réponses contextualisées</li>
+                    <li><strong>Interface conversationnelle</strong> : l'utilisateur pose une question en langage naturel et reçoit des recommandations d'événements pertinentes</li>
+                </ul>
+                <div class="tech-stack">
+                    <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+                    <ul>
+                        <li><strong>Python</strong></li>
+                        <li><strong>LangChain</strong> (orchestration RAG)</li>
+                        <li><strong>Mistral AI</strong> (embeddings & génération)</li>
+                        <li><strong>FAISS</strong> (recherche vectorielle)</li>
+                        <li><strong>OpenAgenda API</strong></li>
+                        <li><strong>NLP / IA Générative</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="code-section-wrapper">
+                <section class="project-code">
+                    <h2><i class="fas fa-code"></i> Extrait du code</h2>
+                    <pre><code class="language-python">
+from langchain.vectorstores import FAISS
+from langchain.embeddings import MistralAIEmbeddings
+from langchain.chains import RetrievalQA
+from langchain.llms import MistralAI
+
+def creer_assistant_rag(evenements: list[str]) -> RetrievalQA:
+    """Crée un assistant RAG à partir d'une liste d'événements culturels."""
+    embeddings = MistralAIEmbeddings(model="mistral-embed")
+    vectorstore = FAISS.from_texts(evenements, embeddings)
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
+
+    llm = MistralAI(model="mistral-small", temperature=0.2)
+    chain = RetrievalQA.from_chain_type(
+        llm=llm,
+        retriever=retriever,
+        chain_type="stuff"
+    )
+    return chain
+
+# Exemple d'utilisation
+assistant = creer_assistant_rag(evenements_openagenda)
+reponse = assistant.run("Quels concerts jazz ont lieu à Paris ce weekend ?")
+print(reponse)
+                    </code></pre>
+                </section>
+                <div class="github-link">
+                    <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i>
+                        Voir le code complet sur GitHub
+                    </a>
+                    <p class="github-description">
+                        Accédez au repository complet pour explorer :
+                        <ul>
+                            <li>Le pipeline complet de vectorisation et recherche</li>
+                            <li>Les notebooks de prétraitement OpenAgenda</li>
+                            <li>Les tests de qualité des réponses RAG</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex-sections">
+                <section class="project-results">
+                    <h2><i class="fas fa-chart-bar"></i> Points clés</h2>
+                    <ul>
+                        <li><i class="fas fa-robot"></i> Assistant conversationnel RAG fonctionnel</li>
+                        <li><i class="fas fa-search"></i> Recherche sémantique sur des milliers d'événements</li>
+                        <li><i class="fas fa-language"></i> Réponses en langage naturel contextualisées</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Couverture des événements Paris et France</li>
+                    </ul>
+                </section>
+                <section class="project-features">
+                    <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+                    <ul>
+                        <li><i class="fas fa-brain"></i> Architecture RAG (Retrieval Augmented Generation)</li>
+                        <li><i class="fas fa-vector-square"></i> Indexation vectorielle FAISS</li>
+                        <li><i class="fas fa-link"></i> Orchestration LangChain</li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ENDAYE Aimé – Portfolio Data Science</p>
+    </footer>
+</body>
+</html>

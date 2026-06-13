@@ -1,0 +1,175 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="TVqlmPGP7TU51r-1kTek">
+    <mxGraphModel dx="18480" dy="1456" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="onprem" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=13;fontStyle=1;verticalAlign=top;align=center;arcSize=3;" value="On-premise — SI InduTechData" vertex="1">
+          <mxGeometry height="190" width="1040" x="60" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sql" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;SQL Server&lt;/b&gt;&lt;br&gt;ERP / CRM — 40 To" vertex="1">
+          <mxGeometry height="80" width="240" x="110" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="san" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;SAN Storage&lt;/b&gt;&lt;br&gt;Logs, fichiers, IoT — 10 To" vertex="1">
+          <mxGeometry height="80" width="240" x="450" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="ad" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;align=center;" value="" vertex="1">
+          <mxGeometry height="80" width="260" x="790" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="san_arr" edge="1" parent="1" style="edgeStyle=none;rounded=0;strokeColor=#333333;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="165" as="sourcePoint" />
+            <mxPoint x="570" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vpn" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#666666;fontSize=11;" value="Connexion sécurisée — VPN IPSec / AWS Direct Connect — SSL/TLS" vertex="1">
+          <mxGeometry height="30" width="660" x="250" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="poc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fff0;strokeColor=#339933;fontColor=#336633;fontSize=13;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;arcSize=3;" value="POC local — Docker Compose" vertex="1">
+          <mxGeometry height="640" width="430" x="60" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="prod" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#339933;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;producer_tickets.py&lt;/b&gt;&lt;br&gt;Génère tickets clients aléatoires&lt;br&gt;&lt;font color=&#39;#666666&#39;&gt;ID · client · date · type · priorité&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="370" x="90" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="redp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#339933;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;Redpanda (Docker)&lt;/b&gt;&lt;br&gt;Broker Kafka · topic client_tickets&lt;br&gt;&lt;font color=&#39;#666666&#39;&gt;Streaming temps réel local&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="370" x="90" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="pysp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#339933;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;PySpark (Docker)&lt;/b&gt;&lt;br&gt;Traitement · agrégations · insights&lt;br&gt;&lt;font color=&#39;#666666&#39;&gt;Assignation équipe · tickets par type&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="370" x="90" y="625" as="geometry" />
+        </mxCell>
+        <mxCell id="dataout" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#339933;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;data/output/&lt;/b&gt;&lt;br&gt;Stockage fichiers locaux · Parquet / JSON" vertex="1">
+          <mxGeometry height="70" width="370" x="90" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="docker" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#339933;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;docker-compose.yml&lt;/b&gt;&lt;br&gt;Orchestration · volumes · réseau" vertex="1">
+          <mxGeometry height="70" width="370" x="90" y="875" as="geometry" />
+        </mxCell>
+        <mxCell id="aws" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f4ff;strokeColor=#3366cc;fontColor=#336699;fontSize=13;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;arcSize=3;" value="AWS Cloud — Production" vertex="1">
+          <mxGeometry height="750" width="510" x="590" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lambda" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3366cc;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;Ingestion — AWS Lambda / Kinesis&lt;/b&gt;&lt;br&gt;= producer_tickets.py&lt;br&gt;&lt;font color=&#39;#666666&#39;&gt;Génération · envoi d&#39;événements temps réel&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="450" x="620" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="msk" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3366cc;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;Streaming — Amazon MSK&lt;/b&gt;&lt;br&gt;= Redpanda · Broker Kafka managé&lt;br&gt;&lt;font color=&#39;#666666&#39;&gt;Topic client_tickets · Kafka API&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="450" x="620" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="emr" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3366cc;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;Traitement — Amazon EMR&lt;/b&gt;&lt;br&gt;= PySpark · Cluster Spark managé&lt;br&gt;&lt;font color=&#39;#666666&#39;&gt;Nettoyage · transformation · batch&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="450" x="620" y="625" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3366cc;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;Stockage — Amazon S3&lt;/b&gt;&lt;br&gt;= data/output/ · Data Lake&lt;br&gt;&lt;font color=&#39;#666666&#39;&gt;Parquet · JSON · CSV · données brutes&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="450" x="620" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="cform" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3366cc;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;Orchestration — AWS CloudFormation / CDK&lt;/b&gt;&lt;br&gt;= docker-compose.yml&lt;br&gt;&lt;font color=&#39;#666666&#39;&gt;IaC · déploiement · réseau VPC&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="450" x="620" y="875" as="geometry" />
+        </mxCell>
+        <mxCell id="redshift" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3366cc;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;Analyse — Amazon Redshift&lt;/b&gt;&lt;br&gt;Entrepôt · requêtes SQL analytiques" vertex="1">
+          <mxGeometry height="70" width="450" x="620" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="dms" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff0f0;strokeColor=#cc3333;fontColor=#333333;fontSize=12;fontStyle=1;align=center;" value="&lt;b&gt;Migration — AWS DMS&lt;/b&gt;&lt;br&gt;Sync SQL Server → S3 / Redshift" vertex="1">
+          <mxGeometry height="70" width="460" x="400" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="svc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fffff0;strokeColor=#ccaa00;fontColor=#886600;fontSize=13;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;arcSize=3;" value="Services transversaux AWS" vertex="1">
+          <mxGeometry height="200" width="760" x="400" y="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="iam" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fffff0;strokeColor=#ccaa00;fontColor=#333333;fontSize=11;align=center;" value="&lt;b&gt;Sécurité — IAM + Directory Service&lt;/b&gt;&lt;br&gt;= Active Directory · accès centralisés" vertex="1">
+          <mxGeometry height="100" width="340" x="420" y="1310" as="geometry" />
+        </mxCell>
+        <mxCell id="cw" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fffde0;strokeColor=#ccaa00;fontColor=#333333;fontSize=11;align=center;" value="CloudWatch · monitoring · alertes · coûts" vertex="1">
+          <mxGeometry height="60" width="340" x="790" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#666666;fontSize=11;fontStyle=2;" value="— — migration / équivalence cloud (même rôle, technologie différente)" vertex="1">
+          <mxGeometry height="30" width="640" x="250" y="1490" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="prod" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#333333;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="redp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="redp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#333333;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="pysp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" edge="1" parent="1" source="pysp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#333333;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="dataout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" edge="1" parent="1" source="dataout" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#333333;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="docker">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" edge="1" parent="1" source="lambda" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#333333;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="msk">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" edge="1" parent="1" source="msk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#333333;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="emr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" edge="1" parent="1" source="emr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#333333;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" edge="1" parent="1" source="s3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#333333;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="cform">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a9" edge="1" parent="1" source="cform" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#333333;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="redshift">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eq1" edge="1" parent="1" style="edgeStyle=none;dashed=1;dashPattern=8 4;strokeColor=#999999;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="405" as="sourcePoint" />
+            <mxPoint x="620" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eq2" edge="1" parent="1" style="edgeStyle=none;dashed=1;dashPattern=8 4;strokeColor=#999999;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="535" as="sourcePoint" />
+            <mxPoint x="620" y="535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eq3" edge="1" parent="1" style="edgeStyle=none;dashed=1;dashPattern=8 4;strokeColor=#999999;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="665" as="sourcePoint" />
+            <mxPoint x="620" y="665" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eq4" edge="1" parent="1" style="edgeStyle=none;dashed=1;dashPattern=8 4;strokeColor=#999999;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="790" as="sourcePoint" />
+            <mxPoint x="620" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eq5" edge="1" parent="1" style="edgeStyle=none;dashed=1;dashPattern=8 4;strokeColor=#999999;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="910" as="sourcePoint" />
+            <mxPoint x="620" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r1" edge="1" parent="1" style="edgeStyle=elbowEdgeStyle;elbow=vertical;dashed=1;dashPattern=6 4;strokeColor=#cc3333;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="1165" />
+            </Array>
+            <mxPoint x="230" y="165" as="sourcePoint" />
+            <mxPoint x="400" y="1165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r2" edge="1" parent="1" style="edgeStyle=none;strokeColor=#cc3333;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="845" y="1130" as="sourcePoint" />
+            <mxPoint x="845" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y1" edge="1" parent="1" style="edgeStyle=elbowEdgeStyle;elbow=vertical;dashed=1;dashPattern=6 4;strokeColor=#ccaa00;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="1310" />
+            </Array>
+            <mxPoint x="920" y="165" as="sourcePoint" />
+            <mxPoint x="590" y="1310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y2" edge="1" parent="1" style="edgeStyle=none;dashed=1;dashPattern=6 4;strokeColor=#ccaa00;strokeWidth=2;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="760" y="1360" as="sourcePoint" />
+            <mxPoint x="790" y="1360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d6U4MSd8TxgKxZfxAe3Y-39" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontColor=#333333;fontSize=11;align=center;" value="&lt;b style=&quot;color: rgb(0, 0, 0);&quot;&gt;Active Directory&lt;/b&gt;&lt;br style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Gestion des identités&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="240" x="800" y="85" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

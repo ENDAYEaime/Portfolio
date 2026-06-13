@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orchestration de Pipeline Data avec Kestra – ENDAYE Aimé</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+    <header>
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#projets">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="project-page">
+        <article class="project-content">
+            <h1>Orchestration de Pipeline Data avec Kestra</h1>
+
+            <section class="project-details">
+                <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+                <p>Mise en place d'un pipeline de données complet orchestré avec Kestra, incluant la détection et résolution de goulots d'étranglement, ainsi que des workflows automatisés. Ce projet comprend :</p>
+                <ul>
+                    <li><strong>Orchestration de workflows</strong> : conception et déploiement de pipelines de données avec Kestra via des fichiers YAML déclaratifs</li>
+                    <li><strong>Détection de bottlenecks</strong> : identification et optimisation des étapes bloquantes dans le pipeline de données</li>
+                    <li><strong>Tests automatisés</strong> : mise en place de suites de tests pour valider chaque étape du pipeline</li>
+                    <li><strong>Containerisation</strong> : déploiement de l'environnement complet avec Docker</li>
+                </ul>
+                <div class="tech-stack">
+                    <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+                    <ul>
+                        <li><strong>Kestra</strong> (orchestration de workflows)</li>
+                        <li><strong>Python</strong></li>
+                        <li><strong>Docker</strong> / <strong>Docker Compose</strong></li>
+                        <li><strong>YAML</strong> (définition des workflows)</li>
+                        <li><strong>ETL / Data Pipeline</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="code-section-wrapper">
+                <section class="project-code">
+                    <h2><i class="fas fa-code"></i> Extrait du workflow</h2>
+                    <pre><code class="language-yaml">
+# workflow.yaml – Pipeline principal Kestra
+id: pipeline_data_principal
+namespace: endaye.projet10
+
+tasks:
+  - id: extraction_donnees
+    type: io.kestra.plugin.scripts.python.Script
+    script: |
+      import pandas as pd
+      df = pd.read_csv("data/raw/input.csv")
+      df.to_parquet("data/staging/extracted.parquet")
+
+  - id: transformation
+    type: io.kestra.plugin.scripts.python.Script
+    dependsOn: [extraction_donnees]
+    script: |
+      import pandas as pd
+      df = pd.read_parquet("data/staging/extracted.parquet")
+      df_clean = df.dropna().drop_duplicates()
+      df_clean.to_parquet("data/output/transformed.parquet")
+
+  - id: validation_qualite
+    type: io.kestra.plugin.scripts.python.Script
+    dependsOn: [transformation]
+    script: |
+      import pandas as pd
+      df = pd.read_parquet("data/output/transformed.parquet")
+      assert df.shape[0] > 0, "Le pipeline a produit un résultat vide"
+      print(f"Pipeline OK – {df.shape[0]} lignes traitées")
+
+triggers:
+  - id: schedule_quotidien
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: "0 6 * * *"
+                    </code></pre>
+                </section>
+                <div class="github-link">
+                    <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i>
+                        Voir le code complet sur GitHub
+                    </a>
+                    <p class="github-description">
+                        Accédez au repository complet pour explorer :
+                        <ul>
+                            <li>Les workflows Kestra et leur configuration</li>
+                            <li>Les scripts Python d'extraction et transformation</li>
+                            <li>Les diagrammes de pipeline et résultats de tests</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex-sections">
+                <section class="project-results">
+                    <h2><i class="fas fa-chart-bar"></i> Points clés</h2>
+                    <ul>
+                        <li><i class="fas fa-sitemap"></i> Pipeline orchestré de bout en bout avec Kestra</li>
+                        <li><i class="fas fa-tachometer-alt"></i> Détection et résolution de goulots d'étranglement</li>
+                        <li><i class="fas fa-check-double"></i> Tests automatisés à chaque étape</li>
+                        <li><i class="fas fa-clock"></i> Déclenchement planifié automatique</li>
+                    </ul>
+                </section>
+                <section class="project-features">
+                    <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+                    <ul>
+                        <li><i class="fas fa-code-branch"></i> Gestion des dépendances entre tâches</li>
+                        <li><i class="fas fa-docker"></i> Déploiement containerisé Kestra + base de données</li>
+                        <li><i class="fas fa-chart-area"></i> Visualisation du flow dans l'UI Kestra</li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ENDAYE Aimé – Portfolio Data Science</p>
+    </footer>
+</body>
+</html>

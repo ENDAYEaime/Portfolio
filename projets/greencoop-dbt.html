@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenCoop – Entrepôt de Données dbt & Docker – ENDAYE Aimé</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+    <header>
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#projets">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="project-page">
+        <article class="project-content">
+            <h1>GreenCoop – Entrepôt de Données dbt & Docker</h1>
+
+            <section class="project-details">
+                <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+                <p>Projet de data engineering pour une coopérative verte (GreenAndCoop), mettant en place un entrepôt de données moderne à l'aide de dbt et Docker. Ce projet couvre :</p>
+                <ul>
+                    <li><strong>Modélisation des données</strong> : conception de modèles dbt en couches (staging, intermediate, marts) pour structurer les données de la coopérative</li>
+                    <li><strong>Transformation SQL</strong> : écriture de requêtes dbt pour nettoyer, agréger et enrichir les données brutes</li>
+                    <li><strong>Containerisation</strong> : déploiement de l'environnement complet avec Docker et docker-compose</li>
+                    <li><strong>Tests de qualité</strong> : implémentation de tests de données automatisés pour garantir l'intégrité des résultats</li>
+                </ul>
+                <div class="tech-stack">
+                    <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+                    <ul>
+                        <li><strong>dbt</strong> (Data Build Tool)</li>
+                        <li><strong>SQL</strong></li>
+                        <li><strong>Docker</strong> / <strong>Docker Compose</strong></li>
+                        <li><strong>PostgreSQL</strong></li>
+                        <li><strong>Data Warehouse</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="code-section-wrapper">
+                <section class="project-code">
+                    <h2><i class="fas fa-code"></i> Extrait du code</h2>
+                    <pre><code class="language-sql">
+-- models/marts/greencoop_summary.sql
+WITH membres AS (
+    SELECT
+        membre_id,
+        nom,
+        region,
+        date_adhesion
+    FROM {{ ref('stg_membres') }}
+),
+commandes AS (
+    SELECT
+        membre_id,
+        COUNT(*) AS nb_commandes,
+        SUM(montant) AS total_achats
+    FROM {{ ref('int_commandes_enrichies') }}
+    GROUP BY membre_id
+)
+SELECT
+    m.membre_id,
+    m.nom,
+    m.region,
+    COALESCE(c.nb_commandes, 0) AS nb_commandes,
+    COALESCE(c.total_achats, 0) AS total_achats
+FROM membres m
+LEFT JOIN commandes c USING (membre_id)
+                    </code></pre>
+                </section>
+                <div class="github-link">
+                    <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i>
+                        Voir le code complet sur GitHub
+                    </a>
+                    <p class="github-description">
+                        Accédez au repository complet pour explorer :
+                        <ul>
+                            <li>Les modèles dbt et la configuration du projet</li>
+                            <li>Le docker-compose et l'environnement de déploiement</li>
+                            <li>Les tests de qualité et les snapshots</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex-sections">
+                <section class="project-results">
+                    <h2><i class="fas fa-chart-bar"></i> Points clés</h2>
+                    <ul>
+                        <li><i class="fas fa-layer-group"></i> Architecture en 3 couches : staging, intermediate, marts</li>
+                        <li><i class="fas fa-check-circle"></i> Tests dbt automatisés sur les modèles critiques</li>
+                        <li><i class="fas fa-docker"></i> Environnement entièrement containerisé</li>
+                        <li><i class="fas fa-seedling"></i> Données orientées économie verte et coopérative</li>
+                    </ul>
+                </section>
+                <section class="project-features">
+                    <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+                    <ul>
+                        <li><i class="fas fa-database"></i> Modélisation Kimball / Data Mart</li>
+                        <li><i class="fas fa-code-branch"></i> Gestion des dépendances dbt (ref, source)</li>
+                        <li><i class="fas fa-shield-alt"></i> Tests d'unicité, de nullité et de cohérence</li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ENDAYE Aimé – Portfolio Data Science</p>
+    </footer>
+</body>
+</html>

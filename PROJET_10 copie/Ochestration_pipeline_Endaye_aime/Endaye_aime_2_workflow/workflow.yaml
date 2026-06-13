@@ -1,0 +1,128 @@
+id: pipeline_vins
+namespace: projet.vins
+
+tasks:
+
+# ==========================================
+# ETAPE 1 — ERP
+# ==========================================
+
+- id: nettoyage_erp
+  type: io.kestra.plugin.scripts.shell.Commands
+  taskRunner:
+    type: io.kestra.plugin.core.runner.Process
+  commands:
+    - pip install duckdb
+    - python -c "import duckdb; con=duckdb.connect('/app/data/pipeline.duckdb'); con.execute(open('/app/script/01_nettoyage_erp.sql').read()); con.close()"
+
+# ==========================================
+# ETAPE 2 — WEB
+# ==========================================
+
+- id: nettoyage_web
+  type: io.kestra.plugin.scripts.shell.Commands
+  taskRunner:
+    type: io.kestra.plugin.core.runner.Process
+  commands:
+    - python -c "import duckdb; con=duckdb.connect('/app/data/pipeline.duckdb'); con.execute(open('/app/script/02_web.sql').read()); con.close()"
+
+# ==========================================
+# ETAPE 3 — LIAISON
+# ==========================================
+
+- id: nettoyage_liaison
+  type: io.kestra.plugin.scripts.shell.Commands
+  taskRunner:
+    type: io.kestra.plugin.core.runner.Process
+  commands:
+    - python -c "import duckdb; con=duckdb.connect('/app/data/pipeline.duckdb'); con.execute(open('/app/script/03_liaison.sql').read()); con.close()"
+
+# ==========================================
+# ETAPE 4 — FUSION
+# ==========================================
+
+- id: fusion_systemes
+  type: io.kestra.plugin.scripts.shell.Commands
+  taskRunner:
+    type: io.kestra.plugin.core.runner.Process
+  commands:
+    - python -c "import duckdb; con=duckdb.connect('/app/data/pipeline.duckdb'); con.execute(open('/app/script/04_fusion_systemes.sql').read()); con.close()"
+
+# ==========================================
+# ETAPE 5 — CHIFFRE D'AFFAIRES
+# ==========================================
+
+- id: calcul_ca
+  type: io.kestra.plugin.scripts.shell.Commands
+  taskRunner:
+    type: io.kestra.plugin.core.runner.Process
+  commands:
+    - python -c "import duckdb; con=duckdb.connect('/app/data/pipeline.duckdb'); con.execute(open('/app/script/05_calcul_chiffre_affaires.sql').read()); con.close()"
+
+# ==========================================
+# ETAPE 6 — Z-SCORE
+# ==========================================
+
+- id: calcul_zscore
+  type: io.kestra.plugin.scripts.python.Script
+  taskRunner:
+    type: io.kestra.plugin.core.runner.Process
+  beforeCommands:
+    - pip install duckdb pandas
+  script: |
+    exec(open("/app/script/06_calcul_zscore.py").read())
+
+# ==========================================
+# ETAPE 7 — EXPORT VINS PREMIUM
+# ==========================================
+
+- id: export_premium
+  type: io.kestra.plugin.scripts.python.Script
+  taskRunner:
+    type: io.kestra.plugin.core.runner.Process
+  beforeCommands:
+    - pip install duckdb pandas
+  script: |
+    exec(open("/app/script/07_export_vins_premium.py").read())
+
+# ==========================================
+# ETAPE 8 — EXPORT VINS ORDINAIRES
+# ==========================================
+
+- id: export_ordinaire
+  type: io.kestra.plugin.scripts.python.Script
+  taskRunner:
+    type: io.kestra.plugin.core.runner.Process
+  beforeCommands:
+    - pip install duckdb pandas
+  script: |
+    exec(open("/app/script/08_export_vins_ordinaires.py").read())
+
+# ==========================================
+# ETAPE 9 — RESULTATS DE LA VERIFICATION
+# ==========================================
+
+- id: verification_finale
+  type: io.kestra.plugin.jdbc.duckdb.Query
+  url: jdbc:duckdb:/app/data/pipeline.duckdb
+  fetchType: FETCH
+  sql: |
+    SELECT
+      (SELECT COUNT(*) FROM erp_clean) AS lignes_erp,
+      (SELECT COUNT(*) FROM liaison_clean) AS lignes_liaison,
+      (SELECT COUNT(*) FROM web_nettoye) AS lignes_web_nettoye,
+      (SELECT COUNT(*) FROM web_clean) AS lignes_web_dedoublonne,
+      (SELECT COUNT(*) FROM dataset_final) AS lignes_fusion,
+      (SELECT ROUND(chiffre_affaires_total, 2) FROM rapport_chiffre_affaires LIMIT 1) AS chiffre_affaires_total,
+      (SELECT COUNT(*) FROM vins_zscore WHERE z_score > 2) AS nb_vins_millesimes;
+
+# ==========================================
+# EXECUTION AUTOMATIQUE
+# ==========================================
+
+triggers:
+
+  - id: execution_mensuelle
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: "0 9 15 * *"
+    description: "Execution automatique le 15 de chaque mois à 9h00"
