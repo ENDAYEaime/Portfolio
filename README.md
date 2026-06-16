@@ -5,6 +5,27 @@
 
 ---
 
+## Parcours Data Engineer – OpenClassrooms
+
+> **11 projets validés sur 12** — Diplôme en cours d'obtention
+
+| # | Projet | Durée | Statut |
+|---|---|---|---|
+| 1 | Découvrez votre formation de Data Engineer | 13h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
+| 2 | [Analysez les données de systèmes éducatifs](analyse-systeme-educatif-mondial/) | 30h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
+| 3 | [Entraînez-vous avec SQL et créez votre BDD](base-donnees-immobilier-analyse-sql/) | 30h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
+| 4 | [Auditez un environnement de données](audit-architecture-olap-supermarket/) | 40h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
+| 5 | [Maintenez un système de stockage sécurisé](mongodb-distributed-data-architecture/) | 40h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
+| 6 | [Anticipez les besoins en consommation de bâtiments](energy-prediction-machine-learning-model/) | 50h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
+| 7 | [Concevez et analysez une base de données NoSQL](medical-records-migration-mongodb/) | 50h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
+| 8 | [Construisez et testez une infrastructure de données](greencoop-dbt/) | 50h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
+| 9 | [Modélisez une infrastructure dans le cloud](indutech-infra-cloud/) | 60h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
+| 10 | [Mettez en place un pipeline d'orchestration des flux](kestra-pipeline/) | 70h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
+| 11 | [Concevez et déployez un système RAG](rag-evenements-culturels/) | 50h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
+| 12 | [Gérez un projet d'infrastructure](sport-data-solution/) | 70h | ![Soutenance](https://img.shields.io/badge/Projet-Soutenance%20planifi%C3%A9e-orange?style=flat) |
+
+---
+
 ## À propos
 
 Passionné par la donnée et autodidacte dans l'âme, je me forme au métier de **Data Engineer** au sein de DSR School / OpenClassrooms. Mon parcours combine apprentissage intensif sur Dataquest, Udemy et des projets techniques concrets couvrant l'ensemble de la chaîne de la donnée : collecte, transformation, stockage, orchestration, IA générative et visualisation.
