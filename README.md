@@ -146,7 +146,7 @@ Portfolio/
 
 ## Diplômes & Certifications
 
-- Formation **Data Engineer** — OpenClassrooms (2025–2026)
+- Formation **Data Engineer** — OpenClassrooms
 - Certifications techniques : **Python · SQL · HTML/CSS**
 - Formations complémentaires : Dataquest · Udemy · DSR School
 
