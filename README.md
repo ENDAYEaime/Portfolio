@@ -7,7 +7,7 @@
 
 ## Parcours Data Engineer – OpenClassrooms
 
-> **11 projets validés sur 12** — Diplôme en cours d'obtention
+> **12 projets validés sur 12** — Diplôme obtenu
 
 | # | Projet | Durée | Statut |
 |---|---|---|---|
@@ -22,7 +22,7 @@
 | 9 | [Modélisez une infrastructure dans le cloud](indutech-infra-cloud/) | 60h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
 | 10 | [Mettez en place un pipeline d'orchestration des flux](kestra-pipeline/) | 70h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
 | 11 | [Concevez et déployez un système RAG](rag-evenements-culturels/) | 50h | ![Validé](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
-| 12 | [Gérez un projet d'infrastructure](sport-data-solution/) | 70h | ![Soutenance](https://img.shields.io/badge/Projet-Soutenance%20planifi%C3%A9e-orange?style=flat) |
+| 12 | [Gérez un projet d'infrastructure](sport-data-solution/) | 70h | ![Soutenance](https://img.shields.io/badge/Projet-Valid%C3%A9-2ea44f?style=flat) |
 
 ---
 
