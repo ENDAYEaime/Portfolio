@@ -137,7 +137,7 @@ Voir le dossier [`diplome/`](diplome/) pour les attestations complètes.
 
 [![GitHub](https://img.shields.io/badge/GitHub-ENDAYEaime-181717?style=flat&logo=github)](https://github.com/ENDAYEaime)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Aimé%20Endaye-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/aime-endaye-2a57b0150)
-[![Email](https://img.shields.io/badge/Email-aimemz0295@gmail.com-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:aimemz0295@gmail.com)
+[![Email](https://img.shields.io/badge/Email-aimemz0295@gmail.com-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:endayeaime@gmail.com)
 
 ---
 
