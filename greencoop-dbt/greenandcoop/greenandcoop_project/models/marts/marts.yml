@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: dim_weather_stations
+    description: "Table de dimension contenant les informations sur les stations météo."
+
+    columns:
+      - name: station_id
+        description: "Identifiant unique de la station météo."
+        tests:
+          - not_null
+          - unique
+
+      - name: station_name
+        description: "Nom de la station météo."
+        tests:
+          - not_null
+
+  - name: fct_weather_observations
+    description: "Table de faits contenant les observations météo normalisées."
+
+    columns:
+      - name: station_id
+        description: "Identifiant de la station associé à l'observation."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_weather_stations')
+                field: station_id
+
+      - name: observation_time
+        description: "Date et heure de l'observation météo."
+        tests:
+          - not_null
+
+      - name: temperature
+        description: "Température mesurée au moment de l'observation."
+
+      - name: humidity
+        description: "Taux d'humidité mesuré au moment de l'observation."
