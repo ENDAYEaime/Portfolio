@@ -3,6 +3,9 @@
 .AppleDouble
 .LSOverride
 
+# VS Code / environnement local
+.claude/
+
 # Fichiers système / éditeur
 *.swp
 *.swo
